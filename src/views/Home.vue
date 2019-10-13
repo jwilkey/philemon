@@ -1,18 +1,22 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div v-for="(unwisdom, i) in unwisdoms" :key="i" class="p2">
+      {{unwisdom.saying}}
+    </div>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import study1 from '@/studies/STUDY_1'
 
 export default {
   name: 'home',
-  components: {
-    HelloWorld
+  components: { },
+  computed: {
+    study1: () => study1,
+    unwisdoms () {
+      return study1.interpret.unwisdom
+    }
   }
 }
 </script>

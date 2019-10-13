@@ -1,0 +1,22 @@
+// $base-color: rgba(255, 255, 255, .95);
+// $contrast-color: #131919;
+// $primary: #2372bf;
+// $secondary: #df6955;
+// $tertiary: #BDA8A4;
+// $shadow-color: $back-color;
+
+@import "../../node_modules/tentkeep-vue/src/assets/sass/base";
+
+html, body, #app {
+  height: 100%;
+}
+ul {
+  list-style: none;
+}
+hr {
+  border-color: $tertiary;
+}
+
+body {
+  background: linear-gradient(45deg, $tertiary2, $tertiary3);
+}
