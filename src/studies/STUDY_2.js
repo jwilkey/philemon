@@ -92,11 +92,32 @@ export default {
       },
       {
         passage: 'PHILEMON.1.6',
-        saying: 'What one thinks of God, he must keep to his own thoughts, if he must think them at all!',
-        comment: `Or perphaps: if you think of some god you are archaic, mis-informed, biased, suffer from tunnel-vision, naive, ignorant, brainwashed. However, if you think of no god, you have no basis for anything you think, it is all a meaningless wandering and vain pursuit of purpose, desire and belonging. What God has made to us about Himself we ought to think on, and share, with one another and with those who wander, for His name's sake and for the sake of our souls.`,
+        saying: 'What one thinks of God, he must keep to his own thoughts, if he must think them at all.',
+        comment: `Or perphaps: if you think of some god you are archaic, mis-informed, biased, suffer from tunnel-vision, naive, ignorant, brainwashed. However, if you think of no god, you have no basis for anything you think, it is all a meaningless wandering and vain pursuit of purpose, desire and belonging. What God has made known to us about Himself we ought to think on, and share with one another and with those who wander, for His name's sake and for the sake of our souls.`,
         chapter: 'Semblance of Profundity'
       }
     ],
-    expound: []
+    expound: [
+      {
+        one: 'I thank God for you.',
+        two: 'Your love shines, your faith in Christ resounds, I thank God who bears His fruit in you.',
+        three: 'Only Spirit can convey the eminating joy and awe observed of the faith and love you so richly exude.',
+        four: 'The memory of you is a delicacy so sweetly enjoyed as can only be recollected unto God in utter gratitude.'
+      },
+      {
+        one: 'You have faith toward Jesus Christ.',
+        two: 'My brittle emotions crave these pleasures below, but my soul trusts in the Flawless King',
+        three: 'No enticement, no pursuit, no provocative appeal can dissolve the solidity of faith secured by an unfailing Savior.'
+      },
+      {
+        one: 'I love all the saints',
+        two: 'I do not look with hateful glances, but with sincere love I see my brothers and sisters.',
+        three: 'There is an unseen current in which I am swimming, together in mutual affection with those whose hearts are enlivened toward each other with the love our Captain commands and provides.',
+        four: 'O brother I have never met, and sister I do not know, yet brother and sister by Spirit sealed, by adoption united, in undying love committed.'
+      },
+      {
+        one: 'As we share in our faith, we learn of the good things that are in us because of Jesus.'
+      }
+    ]
   }
 }

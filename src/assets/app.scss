@@ -1,9 +1,9 @@
-// $base-color: rgba(255, 255, 255, .95);
-// $contrast-color: #131919;
-// $primary: #2372bf;
-// $secondary: #df6955;
-// $tertiary: #BDA8A4;
-// $shadow-color: $back-color;
+$base-color: #030f12;
+$contrast-color: #cececf;
+$primary: #2392df;
+$secondary: #6d9d69;
+$tertiary: #575759;
+$shadow-color: $base-color;
 
 @import "../../node_modules/tentkeep-vue/src/assets/sass/base";
 
@@ -18,5 +18,10 @@ hr {
 }
 
 body {
-  background: linear-gradient(45deg, $tertiary2, $tertiary3);
+  background: linear-gradient(45deg, $base-color, $base-color);
+  font-family: 'Lora', serif;
+}
+
+.bg-tertiary-2 {
+  background-color: darken($tertiary, 20%);
 }
