@@ -1,9 +1,9 @@
-$base-color: #030f12;
-$contrast-color: #cececf;
-$primary: #2392df;
-$secondary: #6d9d69;
-$tertiary: #575759;
-$shadow-color: $base-color;
+$base-color: #a8d0e6;
+$contrast-color: #3d4d4f;
+$primary: #374785;
+$secondary: #f76c6c;
+$tertiary: #ddd1c1;
+$shadow-color: #77777788;
 
 @import "../../node_modules/tentkeep-vue/src/assets/sass/base";
 
@@ -18,10 +18,22 @@ hr {
 }
 
 body {
-  background: linear-gradient(45deg, $base-color, $base-color);
+  background: linear-gradient(135deg, #ffeede 1%, $base-color, fade-in($base-color, .9));
   font-family: 'Lora', serif;
 }
 
+.card {
+  @extend .p2;
+  background-color: white;
+  @extend .shadow-deep;
+  @extend .border-left-secondary;
+  border-width: 4px;
+  // border-radius: 4px;
+  // @extend .primary;
+}
+.shadow-deep {
+  box-shadow: 1px 1px 8px fade-out($shadow-color, .3);
+}
 .bg-tertiary-2 {
   background-color: darken($tertiary, 20%);
 }

@@ -1,6 +1,6 @@
 <template>
-  <div id="app">
-    <router-view/>
+  <div id="app" class="v-fill">
+    <router-view class="v-fill scrolly"/>
   </div>
 </template>
 
