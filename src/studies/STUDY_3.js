@@ -62,7 +62,15 @@ export default {
     expound: [
       {
         one: 'Paul appealed out of love for Philemon to do the best thing',
-        two: 'I could nail my will into your hands, or trust that Spirit will bear His fruit'
+        two: 'I want you to do what I want you to do, but more so, I want you to choose to do of your own accord',
+        three: 'I could nail my will into your hands, or trust that Spirit will bear His fruit',
+        four: `I am a servant, you are a servant. I hear God's voice, you hear as well. Listen to me: listen to God. Two lowly servants hear, one High King command.`
+      },
+      {
+        one: 'The Gospel makes people member of the same family',
+        two: `We share in God's work, we share in His love; we share in His sufferings, we are His family.`,
+        three: `From unthought of slave to beloved child; from bitter rival to affectionate kin; once related by blood of sin, forever adopted by the blood of the Lamb.`,
+        four: `Bitter seed procreating malice, hate, and greed, dissolved by grace and authority, blooming eternal God-held tree. You and I united not by sensational aspiring, but by the ever faithful provenance of our rescuing Father.`
       }
     ]
   }
