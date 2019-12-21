@@ -19,7 +19,11 @@ hr {
 
 body {
   background: linear-gradient(135deg, #ffeede 1%, $base-color, fade-in($base-color, .9));
-  font-family: 'Lora', serif;
+  font-family: 'PT Sans', serif;
+}
+
+.mono {
+  font-family: 'Space Mono', monospace;
 }
 
 .card {

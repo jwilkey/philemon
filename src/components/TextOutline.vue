@@ -1,13 +1,18 @@
 <template>
   <div class="text-outline">
-{{ text }}
+<span v-html="display" />
   </div>
 </template>
 
 <script>
 export default {
   name: 'TextOutline',
-  props: ['text']
+  props: ['text'],
+  computed: {
+    display () {
+      return this.text.replace(/\|?(\d+)\|/g, (a, b) => `<sup class="tertiary">${b}</sup>`)
+    }
+  }
 }
 </script>
 

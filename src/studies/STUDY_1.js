@@ -77,5 +77,6 @@ export default {
         Still God carries me in his love.`
       }
     ]
-  }
+  },
+  application: {}
 }

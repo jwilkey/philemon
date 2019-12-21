@@ -38,6 +38,7 @@ export default {
     }
   },
   interpret: {
+    mainPoint: `Paul wanted Philemon to choose to treat Onesimus as a brother and fellow servant of Christ, not as a servant.`,
     keywords: ['command', 'love', 'appeal', 'useful', 'father', 'brother', 'consent'],
     points: [
       'Paul desired for Philemon to own his responsibility to Onesimus',
@@ -57,6 +58,28 @@ export default {
         saying: 'Your authority is your opportunity to exert yourelf. They will listen, or they will pay.',
         comment: `That's harsh! The world often behaves according to this rule, and we ourselves may often be tempted to impatiently force our will on others in this way. Even in Christian family we may be tempted to exert our preference in the guise of greater experience or title. Yet, how much sweeter to appeal to the character of Christ and the example of His light, then to see this light shine from the other of it's own working, rather than of hot glow of your pressure upon them?! Nonetheless, there are times when authority must be exerted, justice must be established.`,
         chapter: 'You the One'
+      },
+      {
+        passage: 'PHILEMON.1.8',
+        saying: `Be bold in yourself, be strong in your heart, you are the darling princess.`,
+        comment: `Self derived value and authority is supremely inferior to the value and commission imparted by the righteousness and reign of Christ.`
+      },
+      {
+        passage: 'PHILEMON.1.12',
+        saying: `The cure for a broken heart is an insufferable guilting of the one who broke it.`,
+        comment: `Poor me. I deserve nothing less than a fat and happy heart. Woe to you, heart-breaker. Seriously though, if we expect our satisfaction to be met by those we live in relationship with, not only are we being selfish, but we are setting ourselves up for disappointment and ruin. Our heart is satisfied fully and appropriately in God. People will let us down because we are sinful and foolish. Do not lean on a broken stool. Paul sent his heart away, for the sake of fruitfulness of the Kingdom, and for the sake of rightness before God and men.`
+      },
+      {
+        passage: 'PHILEMON.1.14',
+        saying: 'You are the hero saint. You are the changemaker. Your giftings are the treasured gift of the church.',
+        comment: 'Tricky, tricky, very sticky! Christian, you do have value. You do have giftings. You are to be fruitful and used. Used by God. Fruitful because His Spirit is working in you. Gifted because you are given to from God. Valued because you were created in His image, and are being renewed in His image day by day. Not your own image. You are not the hero. You are not the end of the line, the final hope. You are a servant of the Most High.',
+        chapter: 'False Church'
+      },
+      {
+        passage: 'PHILEMON.1.16',
+        saying: 'Your leadership and skill is reflected when others follow and exalt your will.',
+        comment: `You the one! False! It is good to be a leader for Christ. It is good to be someone that merits immitation. But how much sweeter that this immitation be simply a channeling of the character of Christ, of His design. How much sweeter that new, equal or even greater leaders blossom from the encouragement and instruction which you relay! We relinquish self-attained control, the desire to acquire followers of our initiatives for the sake of the vastly superior working of our King's plan, His campaign. I did not create the tree that bears the fruit.`,
+        chapter: 'False Church'
       }
     ],
     expound: [
@@ -67,11 +90,19 @@ export default {
         four: `I am a servant, you are a servant. I hear God's voice, you hear as well. Listen to me: listen to God. Two lowly servants hear, one High King command.`
       },
       {
-        one: 'The Gospel makes people member of the same family',
+        one: 'The Gospel makes people members of the same family',
         two: `We share in God's work, we share in His love; we share in His sufferings, we are His family.`,
-        three: `From unthought of slave to beloved child; from bitter rival to affectionate kin; once related by blood of sin, forever adopted by the blood of the Lamb.`,
-        four: `Bitter seed procreating malice, hate, and greed, dissolved by grace and authority, blooming eternal God-held tree. You and I united not by sensational aspiring, but by the ever faithful provenance of our rescuing Father.`
+        three: `From unthought-of slave to beloved child; from bitter rival to affectionate kin; once related by blood of sin, forever adopted by the blood of the Lamb.`,
+        four: `Bitter seed procreating malice, hate, and greed, dissolved by grace and authority, blooming eternal God-held tree. You and I united not by sensational aspiring, but by the ever faithful provision of our rescuing Father.`
       }
+    ]
+  },
+  application: {
+    convo: [
+      { question: `When there's something you know you should do to be obedient to God, what helps you to do it? Is it helpful to have a godly leader give you direction?` },
+      { question: `Have you ever heard of someone that was literally arrested for following Jesus? What kind of situation would you have to be in where it could be possible for you to be threatened for your faith in Christ? What would you do?` },
+      { question: `Have you ever had tension between you and another Christian? How did you get through it? Did a trusworthy believer help you? If one of the apostles knew about your conflict, what would they have said to you? Do you think one of your pastors can help you work through it in the same way?` },
+      { question: `Have you ever had a friend or coworker go from not believing in Jesus to believing, while you knew them? How do you handle the change to your relationship when they go from - whatever they used to be - to now being your brother or sister in Christ?` }
     ]
   }
 }

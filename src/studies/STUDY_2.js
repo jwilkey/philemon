@@ -1,5 +1,5 @@
 export default {
-  passage: 'PHILEMON.1.4-PHILEMON.1.9',
+  passage: 'PHILEMON.1.4-PHILEMON.1.7',
   observe: {
     people: ['Paul', 'God', 'Philemon', 'Apphia', 'Archippus', 'Jesus', 'the saints'],
     nouns: ['prayers', 'love', 'faith', 'Lord', 'knowledge', 'every good thing', 'sake', 'joy', 'comfort', 'brother', 'hearts'],
@@ -119,5 +119,6 @@ export default {
         one: 'As we share in our faith, we learn of the good things that are in us because of Jesus.'
       }
     ]
-  }
+  },
+  application: {}
 }
