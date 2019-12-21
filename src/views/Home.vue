@@ -88,7 +88,7 @@ export default {
       this.study = this.studies[index]
       fetch(`/texts/STUDY_${index + 1}_text.txt`)
         .then(r => r.text())
-        .then(t => this.text = t)
+        .then(t => (this.text = t))
     }
   },
   mounted () {
