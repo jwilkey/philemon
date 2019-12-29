@@ -92,9 +92,9 @@ export default {
 <style lang="scss" scoped>
 @import "../assets/app";
 
-.textoutline {
-  max-height: 65vh;
-}
+// .textoutline {
+//   max-height: 65vh;
+// }
 .no-left-border {
   border-left: none;
 }

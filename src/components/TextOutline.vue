@@ -1,16 +1,16 @@
 <template>
   <transition name="fade">
-  <div v-if="text" class="content p2 mono flex-column" :class="{ 'v-fill': show }">
-    <div class="card flex-column v-fill">
+  <div v-if="text" class="text-outline content p2 mono" :class="{ 'v-fill': false }">
+    <div class="card v-fill flex-column">
       <div class="flex-row">
         <p class="flex-one primary p1-bottom">{{study.passage}}</p>
-        <a class="tertiary pointer" @click="toggle">{{ show ? 'collapse' : 'show' }}</a>
+        <a class="tertiary pointer font-2" @click="toggle">{{ show ? 'collapse' : 'show' }}</a>
       </div>
-      <div class="text-outline" :class="{ collapsed: !show }">
-        <span v-html="display" />
+      <div class="text-outline-text" :class="{ collapsed: !show }">
+        <p v-html="display" />
       </div>
       <transition name="fade-in">
-        <p v-if="show" class="text-right m2-top tertiary m1-bottom pointer"><a @click="showVerses">show verses</a></p>
+        <p v-if="show" class="text-right font-2 m2-top tertiary m1-bottom pointer"><a @click="showVerses">{{ showVerses ? 'hide' : 'show' }} verses</a></p>
       </transition>
     </div>
   </div>
@@ -23,7 +23,8 @@ export default {
   name: 'TextOutline',
   data () {
     return {
-      show: true
+      show: true,
+      showVerses: false
     }
   },
   computed: {
@@ -36,8 +37,13 @@ export default {
     toggle () {
       this.show = !this.show
     },
-    showVerses () {
-      this.$el.querySelectorAll('.verse-num').forEach(e => e.classList.remove('hidden'))
+    toggleVerses () {
+      this.showVerses = !this.showVerses
+      if (this.showVerses) {
+        this.$el.querySelectorAll('.verse-num').forEach(e => e.classList.remove('hidden'))
+      } else {
+        this.$el.querySelectorAll('.verse-num').forEach(e => e.classList.add('hidden'))
+      }
     }
   }
 }
@@ -45,6 +51,12 @@ export default {
 
 <style lang="scss">
 @import "../assets/app";
+
+.text-outline {
+  .card{
+    max-height: 65vh;
+  }
+}
 
 .verse-num {
   @extend .tertiary;
@@ -58,7 +70,7 @@ export default {
 <style lang="scss" scoped>
 @import "../assets/app";
 
-.text-outline {
+.text-outline-text {
   @extend .scrolly;
   font-family: 'Menlo';
   font-size: 14px;
