@@ -13,7 +13,7 @@ import { mapGetters, mapActions } from 'vuex'
 export default {
   name: 'Nav',
   computed: {
-    ...mapGetters(['studyIndex']),
+    ...mapGetters(['study', 'studyIndex']),
     studyCount () { return parseInt(process.env.VUE_APP_STUDY_COUNT) }
   },
   methods: {
@@ -28,7 +28,9 @@ export default {
     }
   },
   mounted () {
-    this.studySelected(0)
+    if (!this.study) {
+      this.studySelected(0)
+    }
   }
 }
 </script>

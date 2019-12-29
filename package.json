@@ -15,6 +15,7 @@
     "vue": "^2.6.10",
     "vue-router": "^3.0.3",
     "vuex": "^3.0.1",
+    "vuex-persist": "^2.2.0",
     "vuex-store-gen": "git+https://github.com/jwilkey/vuex-store-gen.git"
   },
   "devDependencies": {

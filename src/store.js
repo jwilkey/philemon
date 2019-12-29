@@ -1,8 +1,13 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import storeGen from 'vuex-store-gen'
+import VuexPersistence from 'vuex-persist'
 
 Vue.use(Vuex)
+
+const vuexLocal = new VuexPersistence({
+  storage: window.localStorage
+})
 
 const state = {
   studyIndex: 0,
@@ -12,5 +17,6 @@ const state = {
 
 export default new Vuex.Store({
   state,
-  ...storeGen(state)
+  ...storeGen(state),
+  plugins: [vuexLocal.plugin]
 })
