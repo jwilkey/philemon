@@ -50,6 +50,7 @@ export default {
   @extend .flex-row;
   @extend .uppercase;
   @extend .p1;
+  @extend .pointer;
   margin: 0 4px 0 4px;
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;

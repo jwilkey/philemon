@@ -38,7 +38,7 @@ export default {
     }
   },
   interpret: {
-    mainPoint: `Paul wanted Philemon to choose to treat Onesimus as a brother and fellow servant of Christ, not as a servant.`,
+    mainPoint: `Paul wanted Philemon to choose to treat Onesimus as a brother and fellow servant of Christ, not as a personal servant.`,
     keywords: ['command', 'love', 'appeal', 'useful', 'father', 'brother', 'consent'],
     points: [
       'Paul desired for Philemon to own his responsibility to Onesimus',
