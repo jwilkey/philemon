@@ -2,7 +2,7 @@
   <div>
     <p v-if="!items || items.length === 0" class="empty-state">This is incomplete</p>
     <div v-else class="grid">
-      <div v-for="(item, i) in internalItems" :key="i" class="grid-item">{{ item }}</div>
+      <div v-for="(item, i) in internalItems" :key="i" class="grid-item" :style="{ 'animation-duration': `${i * 70 + 50}ms`}">{{ item }}</div>
     </div>
   </div>
 </template>
@@ -20,6 +20,11 @@ export default {
     items () {
       this.internalItems = []
       this.$nextTick(() => {
+        // this.items.forEach((item, i) => {
+        //   setTimeout(() => {
+        //     this.internalItems.push(item)
+        //   }, 100 * i)
+        // })
         this.internalItems = this.items
       })
     }
@@ -42,7 +47,7 @@ export default {
     @extend .p1;
     @extend .bg-secondary;
     @extend .text-center;
-    color: white;
+    @extend .hi;
     border-radius: 3px;
     border: solid 1px transparent;
     @extend .appear;

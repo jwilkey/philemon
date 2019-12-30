@@ -64,13 +64,13 @@ export default {
     transition: background-color .5s;
   }
   &:not(.active) > p {
-    background-color: white;
+    @extend .bg-hi;
     border-radius: 3px;
     padding: 0 2px;
   }
   &.active {
     @extend .bg-primary;
-    color: white;
+    @extend .hi;
   }
   transition: background-color .5s;
 }

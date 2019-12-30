@@ -1,4 +1,5 @@
 $base-color: #a8d0e6;
+$hi: #fefefe;
 $contrast-color: #3d4d4f;
 $primary: #374785;
 $secondary: #f76c6c;
@@ -28,7 +29,7 @@ body {
 
 .card {
   @extend .p2;
-  background-color: white;
+  @extend .bg-hi;
   @extend .shadow-deep;
   @extend .border-left-secondary;
   border-width: 4px;
@@ -38,6 +39,11 @@ body {
 }
 .bg-tertiary-2 {
   background-color: darken($tertiary, 20%);
+}
+.hi { color: $hi; }
+.bg-hi { background-color: $hi; }
+.border-hi {
+  border: solid 1px $hi;
 }
 
 hr {
@@ -77,12 +83,16 @@ hr {
   @extend .p1;
   @extend .m1-right;
   @extend .pointer;
+  @extend .border-hi;
+  @extend .hi;
+  text-shadow: 0 0 2px #00000077;
+  border-top: none;
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
   transition: background-color .5s;
   &.active {
     @extend .bg-secondary;
-    color: white;
+    @extend .hi;
   }
 }
 
