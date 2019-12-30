@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="p1 uppercase hi bg-primary">Philemon</div>
+    <div class="title">Philemon</div>
     <score />
   </div>
 </template>
@@ -13,3 +13,16 @@ export default {
   components: { Score }
 }
 </script>
+
+<style lang="scss" scoped>
+@import "../assets/app";
+
+.title {
+  @extend .p1;
+  @extend .uppercase;
+  @extend .hi;
+  @extend .bg-primary;
+  @extend .font1;
+  letter-spacing: 1.5px;
+}
+</style>
