@@ -10,7 +10,7 @@
         <p v-html="display" />
       </div>
       <transition name="fade-in">
-        <p v-if="show" class="text-right font-2 m2-top tertiary m1-bottom pointer"><a @click="showVerses">{{ showVerses ? 'hide' : 'show' }} verses</a></p>
+        <p v-if="show" class="text-right font-2 m2-top tertiary m1-bottom pointer"><a @click="toggleVerses">{{ showVerses ? 'hide' : 'show' }} verses</a></p>
       </transition>
     </div>
   </div>

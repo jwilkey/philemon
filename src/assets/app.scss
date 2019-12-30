@@ -15,7 +15,10 @@ ul {
   list-style: none;
 }
 hr {
+  background-color: $primary3;
   border-color: $tertiary;
+  border-left: none !important;
+  border-right: none !important;
 }
 
 body {

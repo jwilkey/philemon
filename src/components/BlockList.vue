@@ -1,13 +1,13 @@
 <template>
   <div class="content p2">
-    <p v-if="!items || items.length === 0" class="empty-state">This is incomplete</p>
-    <div v-else class="grid">
-      <div v-for="(item, i) in internalItems" :key="i" class="grid-item" :style="{ 'animation-duration': `${i * 70 + 50}ms`}">{{ item }}</div>
-    </div>
+    <p v-if="!items || items.length === 0" class="empty-state">This is not complete</p>
+    <anima-list :items="items" class="grid" :classes="['grid-item']" />
   </div>
 </template>
 
 <script>
+import AnimaList from '@/generic/AnimaList'
+
 export default {
   name: 'BlockList',
   props: ['items'],
@@ -16,6 +16,7 @@ export default {
       internalItems: []
     }
   },
+  components: { AnimaList },
   watch: {
     items () {
       this.internalItems = []

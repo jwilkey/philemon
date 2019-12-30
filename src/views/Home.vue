@@ -6,7 +6,11 @@
       <text-outline class="textoutline p0-bottom" />
       <hanging-tabs :items="observations" v-model="observation" />
 
-      <block-list :items="study.observe[observation.toLowerCase()]"></block-list>
+      <transition name="fade-in">
+        <persons v-if="O('Persons')" :items="study.observe.persons" />
+        <definitions v-if="O('Definitions')" :items="study.observe.definitions" />
+        <block-list v-if="isObservationList" :items="study.observe[observation.toLowerCase()]" />
+      </transition>
 
       <hr class="border-primary">
 
@@ -48,6 +52,8 @@ import Navigation from '@/components/Nav'
 import BlockList from '@/components/BlockList'
 import TextOutline from '@/components/TextOutline'
 import HangingTabs from '@/components/HangingTabs'
+import Persons from '@/components/Persons'
+import Definitions from '@/components/Definitions'
 import Unwisdom from '@/components/Unwisdom'
 import Expound from '@/components/Expound'
 import Conversation from '@/components/Conversation'
@@ -57,22 +63,25 @@ export default {
   name: 'home',
   data () {
     return {
-      observation: 'People',
+      observation: 'Persons',
       interpretation: 'Unwisdom',
       application: 'Conversation'
     }
   },
-  components: { Navigation, BlockList, TextOutline, HangingTabs, Unwisdom, Expound, Conversation },
+  components: { Navigation, BlockList, TextOutline, HangingTabs, Persons, Definitions, Unwisdom, Expound, Conversation },
   computed: {
     ...mapGetters(['study', 'text']),
     observations () {
-      return ['People', 'Nouns', 'Adjectives', 'Actions']
+      return ['Persons', 'People', 'Nouns', 'Adjectives', 'Actions', 'Definitions']
     },
     interpretations () {
       return ['Titles', 'Points', 'Keywords', 'Unwisdom', 'Expound']
     },
     applications () {
       return ['Conversation']
+    },
+    isObservationList () {
+      return ['People', 'Nouns', 'Adjectives', 'Actions'].includes(this.observation)
     },
     unwisdoms () {
       return this.study ? this.study.interpret.unwisdom : null
@@ -85,6 +94,7 @@ export default {
     }
   },
   methods: {
+    O (activity) { return this.observation === activity },
     I (activity) { return this.interpretation === activity },
     A (activity) { return this.application === activity }
   }

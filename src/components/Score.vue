@@ -8,7 +8,7 @@
         :class="{complete: i < observeComplete}"
       />
     </div>
-    <div class="score-bar score-interpret">
+    <div v-if="observeComplete > 2" class="score-bar score-interpret">
       <div
         v-for="(activity, i) in interpretTotal"
         :key="i"
@@ -16,7 +16,7 @@
         :class="{complete: i < interpretComplete}"
       />
     </div>
-    <div class="score-bar score-application">
+    <div v-if="interpretComplete > 1" class="score-bar score-application">
       <div
         v-for="(activity, i) in applicationTotal"
         :key="i"
@@ -64,20 +64,8 @@ export default {
     },
     applicationTotal () {
       return parseInt(this.applicationMeta.total)
-    },
-    observePerc () {
-      return parseInt((this.observeMeta.complete / this.observeTotal) * 100)
-    },
-    interpretPerc () {
-      const meta = this.score.interpret.meta()
-      return parseInt((meta.complete / meta.total) * 100)
-    },
-    applyPerc () {
-      const meta = this.score.application.meta()
-      return parseInt((meta.complete / meta.total) * 100)
     }
-  },
-  mounted () { }
+  }
 }
 </script>
 
