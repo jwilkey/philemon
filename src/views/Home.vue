@@ -6,9 +6,7 @@
       <text-outline class="textoutline p0-bottom" />
       <hanging-tabs :items="observations" v-model="observation" />
 
-      <div class="content p2">
-        <block-list :items="study.observe[observation.toLowerCase()]"></block-list>
-      </div>
+      <block-list :items="study.observe[observation.toLowerCase()]"></block-list>
 
       <hr class="border-primary">
 
@@ -21,8 +19,11 @@
       <hanging-tabs :items="interpretations" v-model="interpretation" />
 
       <transition name="fade-in">
-        <unwisdom v-if="showUnwisdom" :items="unwisdoms" />
-        <expound v-if="showExpound" :items="expounds" />
+        <block-list v-if="I('Titles')" :items="study.interpret.titles" />
+        <block-list v-if="I('Points')" :items="study.interpret.points" />
+        <block-list v-if="I('Keywords')" :items="study.interpret.keywords" />
+        <unwisdom v-if="I('Unwisdom')" :items="unwisdoms" />
+        <expound v-if="I('Expound')" :items="expounds" />
       </transition>
 
       <hr class="border-primary">
@@ -36,7 +37,7 @@
       <hanging-tabs :items="applications" v-model="application" />
 
       <transition name="fade-in">
-        <conversation v-if="showConversation" :items="convo" />
+        <conversation v-if="A('Conversation')" :items="convo" />
       </transition>
     </div>
   </div>
@@ -68,7 +69,7 @@ export default {
       return ['People', 'Nouns', 'Adjectives', 'Actions']
     },
     interpretations () {
-      return ['Unwisdom', 'Expound']
+      return ['Titles', 'Points', 'Keywords', 'Unwisdom', 'Expound']
     },
     applications () {
       return ['Conversation']
@@ -81,10 +82,11 @@ export default {
     },
     convo () {
       return this.study ? this.study.application.convo : null
-    },
-    showUnwisdom () { return this.interpretation === 'Unwisdom' },
-    showExpound () { return this.interpretation === 'Expound' },
-    showConversation () { return this.application === 'Conversation' }
+    }
+  },
+  methods: {
+    I (activity) { return this.interpretation === activity },
+    A (activity) { return this.application === activity }
   }
 }
 </script>
@@ -92,9 +94,9 @@ export default {
 <style lang="scss" scoped>
 @import "../assets/app";
 
-// .textoutline {
-//   max-height: 65vh;
-// }
+.home {
+  position: relative;
+}
 .no-left-border {
   border-left: none;
 }
