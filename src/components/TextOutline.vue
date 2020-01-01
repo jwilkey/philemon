@@ -54,6 +54,8 @@ export default {
 
 .text-outline {
   .card{
+    @extend .border-primary;
+    border-left-color: $primary !important;
     max-height: 65vh;
   }
 }

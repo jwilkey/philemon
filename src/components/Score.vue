@@ -8,7 +8,7 @@
         :class="{complete: i < observeComplete}"
       />
     </div>
-    <div v-if="observeComplete > 2" class="score-bar score-interpret">
+    <div class="score-bar score-interpret" :class="{ opacity40: observeComplete < 3 }">
       <div
         v-for="(activity, i) in interpretTotal"
         :key="i"
@@ -16,7 +16,7 @@
         :class="{complete: i < interpretComplete}"
       />
     </div>
-    <div v-if="interpretComplete > 1" class="score-bar score-application">
+    <div class="score-bar score-application" :class="{ opacity30: interpretComplete < 2 }">
       <div
         v-for="(activity, i) in applicationTotal"
         :key="i"
