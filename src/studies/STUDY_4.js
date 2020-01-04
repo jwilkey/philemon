@@ -35,17 +35,29 @@ export default {
   },
   interpret: {
     mainPoint: ``,
-    keywords: [],
+    keywords: ['partner', 'receive', 'owe', 'obedience'],
     points: [
+      'Paul wanted Philemon to receive Onesimus mercifully',
+      'Paul was willing to take on the burden accrued by others',
+      'We have an indebtedness to those who bring us the Gospel',
+      `The payment given to God's ministers receive includes refreshment in Christ`,
+      `Paul had hopeful expectation of Philemon's fruitfulness & obedience`,
+      `Paul was hopeful that the prayers of the saints would lead to his deliverance`
     ],
     titles: [
     ],
     unwisdom: [
       {
-        passage: 'PHILEMON.1',
-        saying: ``,
-        comment: ``,
-        chapter: ``
+        passage: 'PHILEMON.17',
+        saying: `Many friends, many obligations, many burdens, much annoyance.`,
+        comment: `Only self, only the benefit one derives alone, only the love from one's own heart. You were not designed to operate alone. In heaven, there is no burden or annoyance, but joyful sharing and mutual benefit.`,
+        chapter: `You the One`
+      },
+      {
+        passage: 'PHILEMON.17-19',
+        saying: `You have a right to be heard. It does not matter whether you are "important", whether you are "normal", whether you contribute in any way, whether you have any real bearing on the matter, whether it actually affects you, whether you truly care about those involved, whether you are invested in the outcome, whether you are even trying. What does it matter!? Do not be silenced!`,
+        comment: `What passion! Wishy-washy, oh so sloppy! Paul, on the other hand, certainly had a right to be heard by Philemon. He was invested. He had labored hard for his life, and apparently Philemon owed his well being to Paul. Paul made strong requests backed by even stronger commitment. He was willing to sacrifice his treasure for the sake of God's righteousness and mission. Very different than the inclination to further our own mission and distoreted ethics at the cost of someone else's treasure.`,
+        chapter: `You the One`
       }
     ],
     expound: [

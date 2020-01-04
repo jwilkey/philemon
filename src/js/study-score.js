@@ -75,6 +75,13 @@ const template = {
   application: {
     convo: [
       { question: `conversation question accessible to any audience` }
-    ]
+    ],
+    ACTS: {
+      adoration: [`questions derived from the text which inspire adoration`],
+      confession: [`questions derived from the text which facilitate confession of sin`],
+      thanks: [`questions derived from the text which foster thankfulness`],
+      supplication: [`questions derived from the text which inform requests to God`]
+    },
+    integrity: [{ question: ``, will: 0, intellect: 0, fantasy: 0, comment: `` }]
   }
 }

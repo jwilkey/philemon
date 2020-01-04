@@ -26,6 +26,7 @@
         <block-list v-if="I('Titles')" :items="study.interpret.titles" />
         <block-list v-if="I('Points')" :items="study.interpret.points" />
         <block-list v-if="I('Keywords')" :items="study.interpret.keywords" />
+        <block-list v-if="I('Emotions')" :items="study.interpret.emotions" />
         <unwisdom v-if="I('Unwisdom')" :items="unwisdoms" />
         <expound v-if="I('Expound')" :items="expounds" />
       </transition>
@@ -42,6 +43,14 @@
 
       <transition name="fade-in">
         <conversation v-if="A('Conversation')" :items="convo" />
+        <div v-if="A('ACTS')" class="content p2">
+          <div v-for="(questions, category) in study.application.ACTS" :key="category">
+            <h3>{{category}}</h3>
+            <div v-for="(q, i) in questions" :key="i" class="card">
+              {{q}}
+            </div>
+          </div>
+        </div>
       </transition>
     </div>
   </div>
@@ -75,10 +84,10 @@ export default {
       return ['Persons', 'People', 'Nouns', 'Adjectives', 'Actions', 'Definitions']
     },
     interpretations () {
-      return ['Titles', 'Points', 'Keywords', 'Unwisdom', 'Expound']
+      return ['Titles', 'Points', 'Keywords', 'Emotions', 'Unwisdom', 'Expound']
     },
     applications () {
-      return ['Conversation']
+      return ['Conversation', 'ACTS']
     },
     isObservationList () {
       return ['People', 'Nouns', 'Adjectives', 'Actions'].includes(this.observation)

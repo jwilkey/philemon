@@ -29,9 +29,7 @@ export default {
     }
   },
   mounted () {
-    if (!this.study) {
-      this.studySelected(0)
-    }
+    this.studySelected(this.studyIndex || 0)
   }
 }
 </script>

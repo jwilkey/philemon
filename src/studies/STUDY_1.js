@@ -2,7 +2,7 @@ export default {
   passage: 'PHILEMON.1.1-PHILEMON.1.3',
   observe: {
     people: ['Paul', 'Jesus', 'Timothy', 'Philemon', 'Apphia', 'Archippus', `Philemon's house church`, 'God'],
-    nouns: ['prisoner', 'Christ', 'brother', 'worker', 'sister', 'solder', 'church', 'house', 'grace', 'peace', 'Father', 'Lord'],
+    nouns: ['prisoner', 'Christ', 'brother', 'worker', 'sister', 'soldier', 'church', 'house', 'grace', 'peace', 'Father', 'Lord'],
     adjectives: ['beloved', 'fellow'],
     actions: ['giving grace and peace'],
     persons: {
@@ -12,7 +12,9 @@ export default {
     }
   },
   interpret: {
+    mainPoint: `Paul and Timothy greet Philemon and the church in Philemon's house`,
     keywords: ['prisoner', 'brother', 'sister', 'grace', 'peace'],
+    emotions: ['happiness', 'love', 'peacefulness', 'concern'],
     unwisdom: [
       {
         passage: 'PHILEMON.1.1',

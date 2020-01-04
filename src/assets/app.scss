@@ -94,7 +94,7 @@ hr {
   border-bottom-right-radius: 8px;
   transition: background-color .5s;
   &.active {
-    @extend .bg-secondary;
+    @extend .bg-primary3;
     @extend .hi;
   }
 }

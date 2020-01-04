@@ -1,8 +1,11 @@
 <template>
   <div class="content p3">
     <h2 class="title-label">Unwisdom</h2>
-    <div v-for="(unwisdom, i) in items" :key="i" class="unwisdom">
+    <div v-for="(unwisdom, i) in items" :key="i" class="unwisdom" @click="toggleComment(i)">
       <p>{{unwisdom.saying}}</p>
+      <div v-if="comments[i]" class="border-top-tertiary m1-top p1-top">
+        <p class="secondary">{{unwisdom.comment}}</p>
+      </div>
       <p v-if="unwisdom.chapter" class="tertiary text-right p2-right">- {{unwisdom.chapter}}</p>
     </div>
   </div>
@@ -11,7 +14,17 @@
 <script>
 export default {
   name: 'Unwisdom',
-  props: ['items']
+  props: ['items'],
+  data () {
+    return {
+      comments: {}
+    }
+  },
+  methods: {
+    toggleComment (unwisdomIndex) {
+      this.$set(this.comments, unwisdomIndex, !this.comments[unwisdomIndex])
+    }
+  }
 }
 </script>
 

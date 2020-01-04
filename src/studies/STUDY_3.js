@@ -103,6 +103,12 @@ export default {
       { question: `Have you ever heard of someone that was literally arrested for following Jesus? What kind of situation would you have to be in where it could be possible for you to be threatened for your faith in Christ? What would you do?` },
       { question: `Have you ever had tension between you and another Christian? How did you get through it? Did a trusworthy believer help you? If one of the apostles knew about your conflict, what would they have said to you? Do you think one of your pastors can help you work through it in the same way?` },
       { question: `Have you ever had a friend or coworker go from not believing in Jesus to believing, while you knew them? How do you handle the change to your relationship when they go from - whatever they used to be - to now being your brother or sister in Christ?` }
-    ]
+    ],
+    ACTS: {
+      adoration: [],
+      confession: [],
+      thanks: [],
+      supplication: []
+    }
   }
 }
