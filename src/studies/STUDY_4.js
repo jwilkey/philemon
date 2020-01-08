@@ -58,14 +58,20 @@ export default {
         saying: `You have a right to be heard. It does not matter whether you are "important", whether you are "normal", whether you contribute in any way, whether you have any real bearing on the matter, whether it actually affects you, whether you truly care about those involved, whether you are invested in the outcome, whether you are even trying. What does it matter!? Do not be silenced!`,
         comment: `What passion! Wishy-washy, oh so sloppy! Paul, on the other hand, certainly had a right to be heard by Philemon. He was invested. He had labored hard for his life, and apparently Philemon owed his well being to Paul. Paul made strong requests backed by even stronger commitment. He was willing to sacrifice his treasure for the sake of God's righteousness and mission. Very different than the inclination to further our own mission and distoreted ethics at the cost of someone else's treasure.`,
         chapter: `You the One`
+      },
+      {
+        passage: 'PHILEMON.17',
+        saying: `The one who has much must have something of yours`,
+        comment: `Philemon was offered recompense from Paul, but he did not have to accept it. Paul firsts requests that Philemon treat Onesimus as he would treat Paul, and then offers to absorb any debt Onesimus had incurred. Which did Philemon choose? Paul likely did not have much to offer in terms of material, but he did have much to offer in terms of character and honor; these qualities were not present for Philemon to make demand of as if they were his for the extorting; these qualities belonged to Christ, borne out of the fruit of the Spirit in Paul as free gifts to the church. All this being said, most of us are more like Onesimus, indebted, in need, at the mercy of God and one another.`,
+        chapter: ``
       }
     ],
     expound: [
       {
-        one: ``,
-        two: ``,
-        three: ``,
-        four: ``
+        one: `if you consider me your partner`,
+        two: `I know Christ binds us together, and I hope that your motives agree`,
+        three: `You who were saved have been declared made together with me; You now with me ought consider what is made in togetherness`,
+        four: `As you wonder, as you plan, as your thoughts are entertained and persuaded, what allowance is given out of self-denial unto mutual aim?`
       }
     ]
   },
