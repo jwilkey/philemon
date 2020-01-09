@@ -72,6 +72,12 @@ export default {
         two: `I know Christ binds us together, and I hope that your motives agree`,
         three: `You who were saved have been declared made together with me; You now with me ought consider what is made in togetherness`,
         four: `As you wonder, as you plan, as your thoughts are entertained and persuaded, what allowance is given out of self-denial unto mutual aim?`
+      },
+      {
+        one: `charge that to my account`,
+        two: `I trade my treasure for my fellow Christian`,
+        three: `What coin, what fair element rightly remains in my posession when my brother or my sister may so easily ransomed by it's release?`,
+        four: `So brokenness, assault and more often sin take ye Christian a captive, let not my faculties nor my gold be withheld in effect of your redemption.`
       }
     ]
   },
