@@ -31,6 +31,7 @@ export default {
     border-top-right-radius: 50px;
     border-bottom-right-radius: 50px;
     margin-bottom: 3px;
+    &.consideration { @extend .bg-hi; }
     &.one { background-color: #6FFFE9; color: #333; }
     &.two { background-color: #bEe0c1; color: #303; }
     &.three { background-color: #EB5160; color: #ffefef; }

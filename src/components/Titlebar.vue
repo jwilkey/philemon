@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="title">Philemon</div>
+    <div class="title" @click="$router.push('overview')">Philemon</div>
     <score />
   </div>
 </template>
