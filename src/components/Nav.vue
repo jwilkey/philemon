@@ -14,16 +14,20 @@ import { mapGetters, mapActions } from 'vuex'
 export default {
   name: 'Nav',
   computed: {
-    ...mapGetters(['study', 'studyIndex']),
-    studyCount () { return parseInt(process.env.VUE_APP_STUDY_COUNT) }
+    ...mapGetters(['book', 'study', 'studyMeta', 'studyIndex']),
+    studyCount () {
+      return this.studyMeta.studyCount
+    }
   },
   methods: {
-    ...mapActions(['setStudyIndex', 'setStudy', 'setText']),
+    ...mapActions(['setStudyIndex', 'setStudy', 'setStudyMeta', 'setText']),
     studySelected (index) {
       this.setStudyIndex(index)
       this.setText(null)
-      this.setStudy(require(`../studies/STUDY_${index + 1}`).default)
-      fetch(`./texts/STUDY_${index + 1}.txt`)
+      const book = this.book.toLowerCase()
+      this.setStudyMeta(require(`../studies/${book}/meta`).default)
+      this.setStudy(require(`../studies/${book}/STUDY_${index + 1}`).default)
+      fetch(`./texts/${book}/STUDY_${index + 1}.txt`)
         .then(r => r.text())
         .then(t => this.setText(t))
     }

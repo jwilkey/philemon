@@ -1,23 +1,30 @@
 <template>
   <div>
-    <div class="title" @click="$router.push('overview')">Philemon</div>
+    <div class="title-bar flex-row">
+      <div class="title flex-one" @click="$router.push('books')">{{book}}</div>
+      <a @click="$router.push('overview')">?</a>
+    </div>
     <score />
   </div>
 </template>
 
 <script>
 import Score from '@/components/Score'
+import { mapGetters } from 'vuex'
 
 export default {
   name: 'Titlebar',
-  components: { Score }
+  components: { Score },
+  computed: {
+    ...mapGetters(['book'])
+  }
 }
 </script>
 
 <style lang="scss" scoped>
 @import "../assets/app";
 
-.title {
+.title-bar {
   @extend .p1;
   @extend .uppercase;
   @extend .hi;

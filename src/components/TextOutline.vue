@@ -55,7 +55,7 @@ export default {
 .text-outline {
   .card{
     @extend .border-primary;
-    border-left-color: $primary !important;
+    border-left-color: rgba(var(--primary), 1) !important;
     max-height: 65vh;
   }
 }

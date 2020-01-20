@@ -1,29 +1,46 @@
-$base-color: #a8d0e6;
-$hi: #fefefe;
-$contrast-color: #3d4d4f;
-$primary: #374785;
-$secondary: #f76c6c;
-$tertiary: #ddd1c1;
-$shadow-color: #77777788;
-
 @import "../../node_modules/tentkeep-vue/src/assets/sass/base";
+
+:root {
+  --hi: rgba(254,254,254, 1);
+  --base-colorR: 167; --base-colorG: 208; --base-colorB: 231;
+  --contrast-colorR: 60; --contrast-colorG: 77; --contrast-colorB: 79;
+  --primaryR: 54; --primaryG: 69; --primaryB: 135;
+  --secondaryR: 249; --secondaryG: 107; --secondaryB: 105;
+  --tertiaryR: 221; --tertiaryG: 209; --tertiaryB: 192;
+  --shadowRGB: 77,77,77;
+  --shadow-color: rgb(var(--shadowRGB));
+
+  --bg-gradient: linear-gradient(135deg,
+      #ffeede 1%,
+      rgba(var(--base-color), .4),
+      rgba(var(--primary), .2));
+}
+
+#app {
+  background: linear-gradient(135deg,
+      var(--tertiary2) 1%,
+      var(--tertiary3),
+      var(--primary3));
+}
 
 html, body, #app {
   height: 100%;
 }
+
+body {
+  font-family: 'PT Sans', serif;
+}
+
 ul {
   list-style: none;
 }
 hr {
-  background-color: $primary3;
-  border-color: $tertiary;
+  @extend .bg-primary3;
+  border-color: rgba(var(--tertiary), 1);
   border-left: none !important;
   border-right: none !important;
-}
-
-body {
-  background: linear-gradient(135deg, #ffeede 1%, $base-color, fade-in($base-color, .9));
-  font-family: 'PT Sans', serif;
+  @extend .shadow;
+  height: 3px;
 }
 
 .mono {
@@ -38,21 +55,12 @@ body {
   border-width: 4px;
 }
 .shadow-deep {
-  box-shadow: 1px 1px 8px fade-out($shadow-color, .3);
-}
-.bg-tertiary-2 {
-  background-color: darken($tertiary, 20%);
-}
-.hi { color: $hi; }
-.bg-hi { background-color: $hi; }
-.border-hi {
-  border: solid 1px $hi;
+  box-shadow: 1px 1px 8px rgba(var(--shadowRGB), .3);
 }
 
-hr {
-  @extend .shadow;
-  height: 3px;
-}
+.hi { color: var(--hi); }
+.bg-hi { background-color: var(--hi); }
+.border-hi { border: solid 1px var(--hi); }
 
 .title-label {
   @extend .uppercase;
@@ -76,19 +84,19 @@ hr {
   @extend .p3;
   @extend .text-center;
   @extend .rounded;
-  @extend .shadow;
+  @extend .shadow-deep;
   background-color: #00000022;
   text-shadow: 0px 0 4px #ffffff99;
 }
 
 .hanging-tab {
-  @extend .shadow;
+  @extend .shadow-deep;
   @extend .p1;
   @extend .m1-right;
   @extend .pointer;
   @extend .border-hi;
-  @extend .hi;
-  text-shadow: 0 0 2px #00000077;
+  @extend .bg-hi;
+  @extend .tertiary;
   border-top: none;
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
@@ -100,7 +108,7 @@ hr {
 }
 
 .gradient-animate {
-  background: linear-gradient(135deg, #ffeede 1%, $base-color, fade-in($base-color, .9));
+  background: var(--bg-gradient);
 	background-size: 400% 400%;
 	animation: gradientBG 5s ease infinite;
 }

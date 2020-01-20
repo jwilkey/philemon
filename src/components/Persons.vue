@@ -25,10 +25,11 @@ export default {
 
 .title-fade-label {
   padding-left: 4px;
-  border-left: solid 1px fade-out($primary, .77);
+  @extend .border-left-primary3;
 }
+
 .title-fade {
   @extend .flex-one;
-  background: linear-gradient(50deg, transparent, fade-out($primary, .8));
+  background: linear-gradient(50deg, transparent, var(--primary2));
 }
 </style>

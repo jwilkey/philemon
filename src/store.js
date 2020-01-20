@@ -10,6 +10,8 @@ const vuexLocal = new VuexPersistence({
 })
 
 const state = {
+  book: '1john',
+  studyMeta: null,
   studyIndex: 0,
   study: null,
   text: null
