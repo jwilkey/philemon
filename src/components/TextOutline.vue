@@ -1,7 +1,7 @@
 <template>
   <transition name="fade">
-  <div v-if="text" class="text-outline content p2 mono" :class="{ 'v-fill': false }">
-    <div class="card v-fill flex-column">
+  <div v-if="text" class="text-outline p2 mono">
+    <div class="v-fill content border-left-tertiary p2-left flex-column">
       <div class="flex-row">
         <p class="flex-one primary p1-bottom">{{study.passage}}</p>
         <a class="tertiary pointer font-2" @click="toggle">{{ show ? 'collapse' : 'show' }}</a>
@@ -72,6 +72,10 @@ export default {
 <style lang="scss" scoped>
 @import "../assets/app";
 
+.text-outline {
+  @extend .bg-hi;
+  @extend .shadow-deep;
+}
 .text-outline-text {
   @extend .scrolly;
   font-family: 'Menlo';
@@ -79,6 +83,7 @@ export default {
   line-height: 130%;
   white-space: pre-wrap;
   transition: box-shadow .5s;
+  max-height: 60vh;
   &:not(.collapsed) {
     @extend .flex-one;
   }

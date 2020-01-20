@@ -18,7 +18,7 @@ export default {
     styles () {
       return Object.assign(
         {},
-        ...Object.keys(this.studyMeta.colors || {}).map(k => ({ [`--${k}`]: this.studyMeta.colors[k] }))
+        ...Object.keys({ ...this.studyMeta }.colors || {}).map(k => ({ [`--${k}`]: this.studyMeta.colors[k] }))
       )
     }
   }

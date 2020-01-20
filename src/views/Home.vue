@@ -3,7 +3,7 @@
     <navigation />
 
     <div v-if="study" class="flex-one p4-top scrolly">
-      <text-outline class="textoutline p0-bottom" />
+      <text-outline class="textoutline p0-bottom z2" />
       <hanging-tabs :items="observations" v-model="observation" />
 
       <transition name="fade-in">

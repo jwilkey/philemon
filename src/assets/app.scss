@@ -90,13 +90,14 @@ hr {
 }
 
 .hanging-tab {
-  @extend .shadow-deep;
+  // @extend .shadow-deep;
   @extend .p1;
   @extend .m1-right;
   @extend .pointer;
-  @extend .border-hi;
+  @extend .border-primary3;
   @extend .bg-hi;
   @extend .tertiary;
+  @extend .z0;
   border-top: none;
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
