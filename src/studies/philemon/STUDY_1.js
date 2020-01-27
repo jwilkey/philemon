@@ -1,4 +1,4 @@
-export default {
+module.exports = {
   passage: 'PHILEMON.1.1-PHILEMON.1.3',
   observe: {
     people: ['Paul', 'Jesus', 'Timothy', 'Philemon', 'Apphia', 'Archippus', `Philemon's house church`, 'God'],

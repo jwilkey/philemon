@@ -1,8 +1,8 @@
 <template>
   <div class="content p3">
     <h2 class="title-label">Unwisdom</h2>
-    <div v-for="(unwisdom, i) in items" :key="i" class="unwisdom" @click="toggleComment(i)">
-      <p>{{unwisdom.saying}}</p>
+    <div v-for="(unwisdom, i) in items" :key="i" class="unwisdom" @click="toggleComment(i, $event)">
+      <p class="saying">{{unwisdom.saying}}</p>
       <div v-if="comments[i]" class="border-top-tertiary m1-top p1-top">
         <p class="secondary">{{unwisdom.comment}}</p>
       </div>
@@ -21,7 +21,7 @@ export default {
     }
   },
   methods: {
-    toggleComment (unwisdomIndex) {
+    toggleComment (unwisdomIndex, event) {
       this.$set(this.comments, unwisdomIndex, !this.comments[unwisdomIndex])
     }
   }

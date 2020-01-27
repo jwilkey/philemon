@@ -1,4 +1,4 @@
-export default {
+module.exports = {
   studyCount: 1,
   colors: {
     primaryR: 160,

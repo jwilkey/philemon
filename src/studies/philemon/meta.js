@@ -1,3 +1,3 @@
-export default {
+module.exports = {
   studyCount: 4
 }
