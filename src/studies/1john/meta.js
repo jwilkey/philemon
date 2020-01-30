@@ -1,4 +1,5 @@
 module.exports = {
+  title: '1 John',
   studyCount: 1,
   colors: {
     primaryR: 160,

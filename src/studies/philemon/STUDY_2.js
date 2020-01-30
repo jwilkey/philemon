@@ -1,5 +1,6 @@
 module.exports = {
   passage: 'PHILEMON.1.4-PHILEMON.1.7',
+  text: './public/texts/philemon/STUDY_2.txt',
   observe: {
     people: ['Paul', 'God', 'Philemon', 'Apphia', 'Archippus', 'Jesus', 'the saints'],
     nouns: ['prayers', 'love', 'faith', 'Lord', 'knowledge', 'every good thing', 'sake', 'joy', 'comfort', 'brother', 'hearts'],

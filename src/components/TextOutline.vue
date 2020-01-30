@@ -28,7 +28,10 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(['text', 'study']),
+    ...mapGetters(['study']),
+    text () {
+      return this.study.text
+    },
     display () {
       return this.text.replace(/\|?(\d+)\|/g, (a, b) => `<sup class="verse-num hidden">${b}</sup>`)
     }

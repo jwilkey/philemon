@@ -14,7 +14,7 @@ import { mapGetters, mapActions } from 'vuex'
 export default {
   name: 'Nav',
   computed: {
-    ...mapGetters(['book', 'study', 'studyMeta', 'studyIndex']),
+    ...mapGetters(['study', 'studyMeta', 'studyIndex']),
     studyCount () {
       return this.studyMeta.studyCount
     }
@@ -24,12 +24,9 @@ export default {
     studySelected (index) {
       this.setStudyIndex(index)
       this.setText(null)
-      const book = this.book.toLowerCase()
-      this.setStudyMeta(require(`../studies/${book}/meta`))
-      this.setStudy(require(`../studies/${book}/STUDY_${index + 1}`))
-      fetch(`./texts/${book}/STUDY_${index + 1}.txt`)
-        .then(r => r.text())
-        .then(t => this.setText(t))
+      fetch(`${this.studyMeta.source}/STUDY_${index + 1}.json`)
+        .then(r => r.json())
+        .then(study => this.setStudy(study))
     }
   },
   mounted () {

@@ -1,5 +1,6 @@
+var fs = require('fs')
+
 const generate = () => {
-  var fs = require('fs')
   const base = './src/studies'
   const studiesDir = './public/studies'
   if (!fs.existsSync(studiesDir)) { fs.mkdirSync(studiesDir) }
@@ -13,6 +14,9 @@ const generate = () => {
             if (f2.endsWith('js')) {
               const studyPath = path + '/' + f2
               const study = require(studyPath)
+              if (study.text && study.text.endsWith('.txt')) {
+                study.text = fs.readFileSync(study.text, 'utf8')
+              }
               fs.writeFile(`${studiesDir}/${f}/${f2}on`, JSON.stringify(study, null, 2), err => {
                 if (err) { return console.error(err) }
                 console.log('Wrote: ', studyPath)

@@ -1,5 +1,6 @@
 module.exports = {
   passage: '1JOHN.1.1-1JOHN.1.4',
+  text: './public/texts/1john/STUDY_1.txt',
   observe: {
     people: ['we', 'you', 'the Father', 'Jesus Christ'],
     nouns: ['that which was from the beginning', 'eyes', 'hands', 'word of life', 'life', 'fellowship', 'joy'],
