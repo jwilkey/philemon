@@ -16,10 +16,12 @@ export default {
   computed: {
     ...mapGetters(['studyMeta']),
     styles () {
-      return Object.assign(
+      const colors = { ...this.studyMeta }.colors || {}
+      const styles = Object.assign(
         {},
-        ...Object.keys({ ...this.studyMeta }.colors || {}).map(k => ({ [`--${k}`]: this.studyMeta.colors[k] }))
+        ...Object.keys(colors).map(k => ({ [`--${k}`]: this.studyMeta.colors[k] }))
       )
+      return styles
     }
   }
 }
