@@ -1,74 +1,15 @@
 {
   "passage": "1JOHN.1.1-1JOHN.1.4",
+  "text": "5 This is the message we have heard from him and proclaim to you, that God is light, and in him is no darkness at all. 6 If we say we have fellowship with him while we walk in darkness, we lie and do not practice the truth. 7 But if we walk in the light, as he is in the light, we have fellowship with one another, and the blood of Jesus his Son cleanses us from all sin. 8 If we say we have no sin, we deceive ourselves, and the truth is not in us. 9 If we confess our sins, he is faithful and just to forgive us our sins and to cleanse us from all unrighteousness. 10 If we say we have not sinned, we make him a liar, and his word is not in us.\n\nChrist Our Advocate\n2 My little children, I am writing these things to you so that you may not sin. But if anyone does sin, we have an advocate with the Father, Jesus Christ the righteous. 2 He is the propitiation for our sins, and not for ours only but also for the sins of the whole world. ",
   "observe": {
-    "people": [
-      "we",
-      "you",
-      "the Father",
-      "Jesus Christ"
-    ],
-    "nouns": [
-      "that which was from the beginning",
-      "eyes",
-      "hands",
-      "word of life",
-      "life",
-      "fellowship",
-      "joy"
-    ],
-    "adjectives": [
-      "from",
-      "eternal",
-      "with",
-      "too"
-    ],
-    "actions": [
-      "heard",
-      "seen",
-      "looked upon",
-      "touched",
-      "made manifest",
-      "seen",
-      "testify",
-      "proclaim",
-      "made manifest",
-      "seen",
-      "heard",
-      "proclaim",
-      "to have",
-      "writing",
-      "be complete"
-    ],
+    "people": [],
+    "nouns": [],
+    "adjectives": [],
+    "actions": [],
     "persons": {
-      "Author": [
-        "heard that which was from the beginning",
-        "had seen with their own eyes that which was from the beginning",
-        "had looked upon and touched that which was from the beginning",
-        "had seen the word of life",
-        "testified to the word of life",
-        "proclaimed to the audience the eternal life",
-        "had the eternal life that was with the Father manifested to them",
-        "proclaimed to the audience what they had seen and heard",
-        "wanted to have fellowship with the audience",
-        "had fellowship with the Father and with Jesus",
-        "wrote the letter so that their joy may be complete"
-      ],
-      "Audience": [
-        "heard te testimony of the author",
-        "were proclaimed to regarding eternal life",
-        "had the option of fellowship with the author, with the Father, with the Son"
-      ],
-      "God": [
-        "is from the beginning",
-        "is able to be heard",
-        "is able to be seen",
-        "is able to be observed",
-        "is able to be touched",
-        "is the word of life made manifest",
-        "eternal life was with the Father",
-        "the word of life was manifested to the author",
-        "has fellowship with the author, and is available to the audience"
-      ]
+      "Author": [],
+      "Audience": [],
+      "God": []
     },
     "definitions": {
       "Word": ""
@@ -76,22 +17,8 @@
   },
   "interpret": {
     "mainPoint": "",
-    "keywords": [
-      "heard",
-      "seen",
-      "touched",
-      "life",
-      "manifest",
-      "proclaim",
-      "fellowship",
-      "with"
-    ],
-    "points": [
-      "The author encountered the word of life in fellowship and in tangible ways",
-      "The author testified and proclaimed the things seen, heard and touched",
-      "The author desired to have fellowship with the audience, the Father and the Son",
-      "The author wrote about the word of life so that the author's joy would be complete"
-    ],
+    "keywords": [],
+    "points": [],
     "titles": [],
     "emotions": [],
     "unwisdom": [
@@ -102,14 +29,7 @@
         "chapter": ""
       }
     ],
-    "expound": [
-      {
-        "one": "the life was made manifest, and we have seen it",
-        "two": "That life that started it all, that life that holds it all together is that life which came to earth, lived and breathed and healed and bled",
-        "three": "Oh life, you are no distant star, no faint glimmer, you are near, you are as close as the joy I feel, as effective as a pleasing breeze or searing flame. You are not all mystery and shroud, you are voice and song, food and satisfaction.",
-        "four": "In the vast cold of scornful earth, Thy power has emerged a calming voice. In the dark emptiness of a despairing soul, Thy life has flooded warming light. In the bitter tense untrusting church, Thy sacrifice crucifies all arrogant aim."
-      }
-    ]
+    "expound": []
   },
   "application": {
     "convo": [
@@ -118,15 +38,9 @@
       }
     ],
     "ACTS": {
-      "adoration": [
-        "What is something that Jesus did on earth that you find particularly impressive?"
-      ],
-      "confession": [
-        "In what situations are you most distant from fellowship with God?"
-      ],
-      "thanks": [
-        ""
-      ],
+      "adoration": [],
+      "confession": [],
+      "thanks": [],
       "supplication": [
         ""
       ]
