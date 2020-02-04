@@ -1,10 +1,13 @@
 module.exports = {
   title: '1 John',
-  studyCount: 1,
+  studyCount: 3,
   colors: {
-    primary: '#4F3824',
-    primary2: '#6F5844',
-    primary3: '#8F7864'
+    primary: '#B76238',
+    primary2: '#D78258',
+    primary3: '#F7A278',
+    secondary: '#452E39',
+    secondary2: '#654E59',
+    secondary3: '#856E79'
     // secondary: 'rgb(100,220,30)'
   }
 }

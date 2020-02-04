@@ -41,11 +41,18 @@ export default {
     studySelected (study) {
       this.setStudyIndex(0)
       this.setStudy(null)
-      this.setStudyMeta(study)
-      fetch(`${study.source}/STUDY_1.json`)
-        .then(r => r.json())
-        .then(study => this.setStudy(study))
-      this.$router.push('/')
+      Promise.all([
+        fetch(`${study.source}/meta.json`)
+          .then(r => r.json())
+          .then(meta => {
+            this.setStudyMeta(Object.assign(study, meta))
+          }),
+        fetch(`${study.source}/STUDY_1.json`)
+          .then(r => r.json())
+          .then(study => this.setStudy(study))
+      ]).then(_ => {
+        this.$router.push('/')
+      })
     },
     saveStudy () {
       fetch(`${this.studySource}/meta.json`)

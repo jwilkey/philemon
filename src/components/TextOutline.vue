@@ -24,7 +24,7 @@ export default {
   data () {
     return {
       show: true,
-      showVerses: false
+      showVerses: true
     }
   },
   computed: {
@@ -33,7 +33,8 @@ export default {
       return this.study.text
     },
     display () {
-      return this.text.replace(/\|?(\d+)\|/g, (a, b) => `<sup class="verse-num hidden">${b}</sup>`)
+      const pipes = this.text.replace(/\|?(\d+)\|/g, (a, b) => `<sup class="verse-num">${b}</sup>`)
+      return pipes.replace(/(\d+)\u02da/g, (a, b) => `<span class="verse-num">${b} </span>`)
     }
   },
   methods: {
@@ -43,9 +44,9 @@ export default {
     toggleVerses () {
       this.showVerses = !this.showVerses
       if (this.showVerses) {
-        this.$el.querySelectorAll('.verse-num').forEach(e => e.classList.remove('hidden'))
+        this.$el.querySelectorAll('.verse-num').forEach(e => e.classList.remove('hid'))
       } else {
-        this.$el.querySelectorAll('.verse-num').forEach(e => e.classList.add('hidden'))
+        this.$el.querySelectorAll('.verse-num').forEach(e => e.classList.add('hid'))
       }
     }
   }
@@ -64,10 +65,10 @@ export default {
 }
 
 .verse-num {
-  @extend .tertiary;
-  margin-right: -8px;
-  &.hidden {
-    display: none;
+  opacity: .3;
+  transition: opacity .3s;
+  &.hid {
+    opacity: 0;
   }
 }
 </style>

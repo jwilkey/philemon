@@ -53,7 +53,10 @@ module.exports = {
       `Paul's sacrifice and leadership`
     ],
     emotions: {
-
+      sentimental: 'Paul demonstrates sincere sentiment regarding Onesimus, and strives to foster the same attitude in Philemon',
+      insistent: `Paul came as close to ordering Philemon to receive Onesimus graciously as he could without actually ordering him. Instead, he strongly appealed to Philemon's better senses while emphasizing his personal investment in the relationship`,
+      longing: `Paul longed to see fruitfulness borne out in his disciples, to see the fruit of Jesus growing throughout the Church, throughout the world`,
+      confident: `Paul was confident in the work of the Spirit; he was confident that, as a believer and temple of the Lord, Philemon would abide in the commands of Jesus, and Paul was confident of God's deliverance of himself`
     },
     unwisdom: [
       {

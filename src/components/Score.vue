@@ -1,5 +1,5 @@
 <template>
-  <div class="score">
+  <div v-if="study" class="score">
     <div class="score-bar score-observe">
       <div
         v-for="(activity, i) in observeTotal"

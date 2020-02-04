@@ -1,6 +1,6 @@
 module.exports = {
-  passage: '1JOHN.1.1-1JOHN.1.4',
-  text: './public/texts/1john/STUDY_2.txt',
+  passage: '1JOHN.2.1-1JOHN.2.11',
+  text: './public/texts/1john/STUDY_3.txt',
   observe: {
     people: [],
     nouns: [],

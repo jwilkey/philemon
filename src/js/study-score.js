@@ -55,7 +55,7 @@ const template = {
     keywords: ['array of strings'],
     points: ['array of strings'],
     titles: ['array of strings'],
-    emotions: ['array of strings'],
+    emotions: { emotion: 'argument for the presence of the emotion' },
     unwisdom: [
       {
         passage: 'REFERENCE.1.1-5',
