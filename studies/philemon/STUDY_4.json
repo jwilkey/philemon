@@ -150,13 +150,28 @@
         "two": "I know God's Spirit in you, the Spirit that does goodness",
         "three": "Once fractured and incapable even of imagining rightness or love-freely-given, Now you follow, you thirst after The pure water. You obediently follow the path along that holy stream.",
         "four": "Darkness deep and cold breathes threat and condemnation at almost every angle; yet not at that one which my eye, my heart, my strength is fixed. Not in the inseverable inclination of Spirit-sustained faith with which I labour and obey. And I am confident that this same surety dwells also in you."
+      },
+      {
+        "one": "through your prayers",
+        "two": "Speak for me to God, He listens, He is kind, and He delivers",
+        "three": "Let not my need fall silently beneath the stars, no voice nor heart uttering plea for mercy on behalf of my situation. I am trusting that your humble outcry to our Jealous Glory may result in my deliverance from this Arrogant Folly which presently holds me.",
+        "four": "O faithful saint- who serves and gives- in your kneeling before our Mighty God do remember me, your needy brother, so by that grace, which ceaselessly flows, from the Gracious One I may be given to you as a means for your sanctification and our mutual joy."
       }
     ]
   },
   "application": {
     "convo": [
       {
-        "question": ""
+        "question": "When are some times that you have worked with another person to accomplish something? Was it easy to work together? What went well? What went not-so-well? What does it mean to be partners in God's work- in the work of proclaiming His Gospel? Who is your partner today?"
+      },
+      {
+        "question": "Have you ever had to take the bill for someone when you weren't expecting to? Why would Christians be willing to take on the costs of and burdens of each other? Have you ever taken responsibility for another Christian? Why or why not?"
+      },
+      {
+        "question": "Who brought you the message of eternal life? How did God bring that person to the point at which they were able to point you to Jesus? Who are you striving to bring to life in Jesus?"
+      },
+      {
+        "question": "How do you decide who to pray for or what you pray for? Why do you pray? Why does God listen to your prayers? What would your experience of God's Kingdom be like if you engaged with it in consistent prayer?"
       }
     ]
   }
