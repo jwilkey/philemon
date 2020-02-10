@@ -1,12 +1,13 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import store from './store'
 import Home from './views/Home'
 import Overview from './views/Overview'
 import BookChooser from './views/BookChooser'
 
 Vue.use(Router)
 
-export default new Router({
+const router = new Router({
   routes: [
     {
       path: '/',
@@ -25,3 +26,13 @@ export default new Router({
     }
   ]
 })
+
+router.beforeEach((to, from, next) => {
+  if (to.name !== 'books' && !store.getters.study) {
+    next('/books')
+  } else {
+    next()
+  }
+})
+
+export default router

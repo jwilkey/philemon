@@ -1,15 +1,19 @@
 <template>
   <div>
-    <ul class="content p3">
-      <li v-for="s in studies" :key="s.source" class="card flex-row uppercase m2-bottom">
-        <div class="flex-one" @click="studySelected(s)">{{s.title || s.source}}</div>
+    <div v-if="!hasStudies" class="content p3 empty-state">You have not added any study sources</div>
+    <ul v-if="hasStudies" class="content p3">
+      <li v-for="s in studies" :key="s.source" class="card flex-row m2-bottom">
+        <div class="flex-one" @click="studySelected(s)">
+          <p class="uppercase">{{s.title || s.source}} <span v-if="s.author" class="secondary font-2">{{s.author}}</span></p>
+          <p class="secondary3 font-3">{{s.source}}</p>
+        </div>
         <a @click="deleteStudySource(s)">X</a>
       </li>
     </ul>
     <div class="content p3 flex-row">
       <button class="button shadow-deep bg-primary hi" @click="addingStudy = true">Add Study</button>
       <div class="flex-one"></div>
-      <button class="button shadow-deep bg-secondary hi" @click="$router.back()">Cancel</button>
+      <button v-if="hasStudies" class="button shadow-deep bg-secondary hi" @click="$router.back()">Cancel</button>
     </div>
 
     <div v-if="addingStudy" class="content p3">
@@ -19,6 +23,16 @@
         </div>
         <button class="button shadow-deep bg-primary hi">Save</button>
       </form>
+    </div>
+
+    <div class="content p3">
+      <hr />
+      <h3>Suggested studies</h3>
+      <ul class="content p3">
+        <li v-for="s in suggestedStudies" :key="s.source" class="card flex-row uppercase m2-bottom">
+          <div class="flex-one" @click="suggestedStudySelected(s)">{{s.title || s.source}}</div>
+        </li>
+      </ul>
     </div>
   </div>
 </template>
@@ -30,11 +44,16 @@ export default {
   data () {
     return {
       addingStudy: false,
-      studySource: null
+      studySource: null,
+      suggestedStudies: [
+        { title: 'Philemon: Wilkey', source: 'https://jwilkey.github.io/philemon/studies/philemon' },
+        { title: '1 John: Wilkey', source: 'https://jwilkey.github.io/philemon/studies/1john' }
+      ]
     }
   },
   computed: {
-    ...mapGetters(['studies'])
+    ...mapGetters(['studies']),
+    hasStudies () { return !!this.studies.length }
   },
   methods: {
     ...mapActions(['setBook', 'setStudies', 'setStudyMeta', 'setStudy', 'setStudyIndex']),
@@ -54,13 +73,23 @@ export default {
         this.$router.push('/')
       })
     },
-    saveStudy () {
-      fetch(`${this.studySource}/meta.json`)
+    async suggestedStudySelected (study) {
+      this.studySource = study.source
+      const savedStudy = await this.saveStudy()
+      this.studySelected(savedStudy)
+    },
+    async saveStudy () {
+      const existingStudy = this.studies.find(s => s.source === this.studySource)
+      if (existingStudy) {
+        return existingStudy
+      }
+      return fetch(`${this.studySource}/meta.json`)
         .then(r => r.json())
         .then(meta => {
           meta.source = this.studySource
           const studies = this.studies.concat(meta)
           this.setStudies(studies)
+          return meta
         })
     },
     deleteStudySource (source) {

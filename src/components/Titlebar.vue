@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="title-bar flex-row">
-      <div class="title flex-one" @click="$router.push('books')">{{studyMeta.title}}</div>
+      <div class="title flex-one" @click="$router.push('books')">{{title}}</div>
       <a @click="$router.push('overview')">?</a>
     </div>
     <score />
@@ -16,7 +16,10 @@ export default {
   name: 'Titlebar',
   components: { Score },
   computed: {
-    ...mapGetters(['studyMeta'])
+    ...mapGetters(['studyMeta']),
+    title () {
+      return this.studyMeta ? this.studyMeta.title : 'Scripture Studies'
+    }
   }
 }
 </script>
