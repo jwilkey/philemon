@@ -1,7 +1,7 @@
 module.exports = {
   title: '1 John',
   author: 'Wilkey',
-  studyCount: 4,
+  studyCount: 7,
   colors: {
     primary: '#B76238',
     primary2: '#D78258',

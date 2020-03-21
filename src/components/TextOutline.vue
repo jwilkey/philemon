@@ -10,7 +10,10 @@
         <p v-html="display" />
       </div>
       <transition name="fade-in">
-        <p v-if="show" class="text-right font-2 m2-top tertiary m1-bottom pointer"><a @click="toggleVerses">{{ showVerses ? 'hide' : 'show' }} verses</a></p>
+        <p v-if="show" class="text-right font-2 m2-top tertiary m1-bottom pointer">
+          <a @click="toggleVerses" :class="{strike: !showVerses}">verses</a>&nbsp;
+          <a @click="toggleStructure" :class="{strike: showPlain}">structure</a>
+        </p>
       </transition>
     </div>
   </div>
@@ -24,17 +27,20 @@ export default {
   data () {
     return {
       show: true,
-      showVerses: true
+      showVerses: true,
+      showPlain: false,
+      display: ''
     }
   },
   computed: {
     ...mapGetters(['study']),
     text () {
       return this.study.text
-    },
-    display () {
-      const pipes = this.text.replace(/\|?(\d+)\|/g, (a, b) => `<sup class="verse-num">${b}</sup>`)
-      return pipes.replace(/(\d+)\u02da/g, (a, b) => `<span class="verse-num">${b} </span>`)
+    }
+  },
+  watch: {
+    study () {
+      this.createDisplay()
     }
   },
   methods: {
@@ -48,6 +54,18 @@ export default {
       } else {
         this.$el.querySelectorAll('.verse-num').forEach(e => e.classList.add('hid'))
       }
+    },
+    toggleStructure () {
+      this.showPlain = !this.showPlain
+      this.createDisplay()
+    },
+    createDisplay () {
+      let text = this.text.replace(/\|?(\d+)\|/g, (a, b) => `<sup class="verse-num">${b}</sup>`)
+      text = text.replace(/(\d+)\u02da/g, (a, b) => `<span class="verse-num">${b} </span>`)
+      text = this.showPlain
+        ? text.replace(/\u02D9\r?\n|\r/g, '').replace(/\u0020\u0020+/g, ' ')
+        : text.replace(/\u02D9/g, '')
+      this.display = text
     }
   }
 }
@@ -96,5 +114,8 @@ export default {
     height: 28px;
     overflow-y: hidden;
   }
+}
+.strike {
+  text-decoration: line-through;
 }
 </style>

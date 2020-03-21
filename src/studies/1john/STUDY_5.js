@@ -1,6 +1,6 @@
 module.exports = {
-  passage: '1JOHN.2.12-1JOHN.2.17',
-  text: './public/texts/1john/STUDY_4.txt',
+  passage: '1JOHN.2.18-1JOHN.2.29',
+  text: './public/texts/1john/STUDY_5.txt',
   observe: {
     people: [],
     nouns: [],
@@ -8,7 +8,6 @@ module.exports = {
     actions: [],
     persons: {
       Author: [
-        `He wrote to children, fathers, and young men`
       ],
       Audience: [
       ],
