@@ -7,7 +7,9 @@
     "adjectives": [],
     "actions": [],
     "persons": {
-      "Author": [],
+      "Author": [
+        "He wrote to children, fathers, and young men"
+      ],
       "Audience": [],
       "God": []
     },
