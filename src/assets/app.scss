@@ -90,21 +90,23 @@ hr {
 }
 
 .hanging-tab {
-  // @extend .shadow-deep;
   @extend .p1;
   @extend .m1-right;
   @extend .pointer;
   @extend .border-primary3;
   @extend .bg-hi;
-  @extend .tertiary;
+  @extend .secondary2;
   @extend .z0;
   border-top: none;
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
-  transition: background-color .5s;
+  transition: box-shadow .5s, border-color .5s;
+  box-shadow: inset 0px 2px 2px rgba(0, 0, 0, 0.3);
   &.active {
-    @extend .bg-primary3;
-    @extend .hi;
+    @extend .contrast;
+    border-color: var(--primary);
+    border-bottom-width: 3px;
+    box-shadow: none;
   }
 }
 
