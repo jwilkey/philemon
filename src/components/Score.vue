@@ -28,16 +28,12 @@
 </template>
 
 <script>
-import studyScore from '../js/study-score'
 import { mapGetters } from 'vuex'
 
 export default {
   name: 'Score',
   computed: {
-    ...mapGetters(['study']),
-    score () {
-      return studyScore(this.study)
-    },
+    ...mapGetters(['study', 'score']),
     observeMeta () {
       return this.score.observe.meta()
     },

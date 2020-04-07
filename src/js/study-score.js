@@ -30,9 +30,12 @@ export default (study) => {
 }
 
 const judge = value => {
+  const goodArray = () => value.length > 0 && value.every(judge)
+  const goodObject = () => Object.keys(value).length > 0 && Object.values(value).every(judge)
+
   return !!value &&
-    ((Array.isArray(value) ? value.length > 0 && value.every(judge) : false) ||
-      (value instanceof Object ? Object.keys(value).length > 0 && Object.values(value).every(judge) : false) ||
+    ((Array.isArray(value) ? goodArray() : false) ||
+      (value instanceof Object ? goodObject() : false) ||
       (typeof (value) === 'string' ? value.length > 0 : false))
 }
 

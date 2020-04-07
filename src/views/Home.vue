@@ -25,7 +25,7 @@
       <transition name="fade-in">
         <block-list v-if="I('Titles')" :items="study.interpret.titles" />
         <block-list v-if="I('Points')" :items="study.interpret.points" />
-        <block-list v-if="I('Keywords')" :items="study.interpret.keywords" />
+        <component :is="componentFor(study.interpret.keywords)" v-if="I('Keywords')" :items="study.interpret.keywords" />
         <definitions v-if="I('Emotions')" :items="study.interpret.emotions" />
         <unwisdom v-if="I('Unwisdom')" :items="unwisdoms" />
         <expound v-if="I('Expound')" :items="expounds" />
@@ -79,7 +79,7 @@ export default {
   },
   components: { Navigation, BlockList, TextOutline, HangingTabs, Persons, Definitions, Unwisdom, Expound, Conversation },
   computed: {
-    ...mapGetters(['study', 'text']),
+    ...mapGetters(['study', 'text', 'score']),
     observations () {
       return ['Persons', 'People', 'Nouns', 'Adjectives', 'Actions', 'Definitions']
     },
@@ -105,7 +105,10 @@ export default {
   methods: {
     O (activity) { return this.observation === activity },
     I (activity) { return this.interpretation === activity },
-    A (activity) { return this.application === activity }
+    A (activity) { return this.application === activity },
+    componentFor (items) {
+      return Array.isArray(items) ? 'BlockList' : 'Definitions'
+    }
   }
 }
 </script>
