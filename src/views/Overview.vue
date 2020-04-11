@@ -20,12 +20,6 @@ export default {
   computed: {
   },
   mounted () {
-    const studyCount = process.env.VUE_APP_STUDY_COUNT
-    for (let index = 0; index < studyCount; index++) {
-      const study = require(`../studies/STUDY_${index + 1}`).default
-      study.interpret.unwisdom.forEach(u => this.unwisdomChapters.push(u.chapter))
-      this.unwisdomChapters = Array.from(new Set(this.unwisdomChapters))
-    }
   }
 }
 </script>

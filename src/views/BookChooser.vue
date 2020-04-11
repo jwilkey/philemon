@@ -2,12 +2,12 @@
   <div>
     <div v-if="!hasStudies" class="content p3 empty-state">You have not added any study sources</div>
     <ul v-if="hasStudies" class="content p3">
-      <li v-for="s in studies" :key="s.source" class="card flex-row m2-bottom">
+      <li v-for="s in studies" :key="s.source" class="card flex-row m2-bottom align-center">
         <div class="flex-one" @click="studySelected(s)">
           <p class="uppercase">{{s.title || s.source}} <span v-if="s.author" class="secondary font-2">{{s.author}}</span></p>
           <p class="secondary3 font-3">{{s.source}}</p>
         </div>
-        <a @click="deleteStudySource(s)">X</a>
+        <a @click="deleteStudySource(s)">🗑</a>
       </li>
     </ul>
     <div class="content p3 flex-row">
@@ -46,8 +46,8 @@ export default {
       addingStudy: false,
       studySource: null,
       suggestedStudies: [
-        { title: 'Philemon: Wilkey', source: 'https://jwilkey.github.io/philemon/studies/philemon' },
-        { title: '1 John: Wilkey', source: 'https://jwilkey.github.io/philemon/studies/1john' }
+        { title: 'Philemon: Wilkey', source: 'https://jwilkey.github.io/bible-study/studies/philemon' },
+        { title: '1 John: Wilkey', source: 'https://jwilkey.github.io/bible-study/studies/1john' }
       ]
     }
   },

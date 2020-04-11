@@ -4,8 +4,7 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "npm run statics && vue-cli-service build",
-    "statics": "node generate-studies",
+    "build": "vue-cli-service build",
     "deploy": "gh-pages -d dist -u 'Justin Wilkey <jwilkey@tentkeep.com>'",
     "lint": "vue-cli-service lint",
     "test:unit": "vue-cli-service test:unit"
