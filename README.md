@@ -1,4 +1,5 @@
-# philemon
+# bible-study-viewer
+A web application for viewing Bible studies written in the format described in https://github.com/jwilkey/bible-study
 
 ## Project setup
 ```
@@ -10,24 +11,9 @@ npm install
 npm run serve
 ```
 
-### Compiles and minifies for production
+### Deploy using Github Pages
 ```
-npm run build
-```
-
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Run your unit tests
-```
-npm run test:unit
+npm run deploy
 ```
 
 ### Customize configuration

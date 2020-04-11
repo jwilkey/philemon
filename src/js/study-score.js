@@ -40,14 +40,18 @@ const judge = value => {
 }
 
 const template = {
+  passage: 'PHILEMON.1.23-PHILEMON.1.25',
+  text: './public/texts/philemon/STUDY_5.txt',
   observe: {
     people: ['array of strings'],
     nouns: ['array of strings'],
     adjectives: ['array of strings'],
     actions: ['array of strings'],
     persons: {
-      PersonName: ['array of strings'],
-      PersonName2: ['array of strings']
+      God: ['array of strings'],
+      Author: ['array of strings'],
+      Audience: ['array of strings'],
+      MainCharacter: ['array of strings']
     },
     definitions: {
       Word: 'definition'
@@ -55,7 +59,7 @@ const template = {
   },
   interpret: {
     mainPoint: `string`,
-    keywords: ['array of strings'],
+    keywords: ['array of strings'] || { keyword: 'argument for why it is a keyword' },
     points: ['array of strings'],
     titles: ['array of strings'],
     emotions: { emotion: 'argument for the presence of the emotion' },
