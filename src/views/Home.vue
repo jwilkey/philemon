@@ -51,6 +51,7 @@
             </div>
           </div>
         </div>
+        <integrity v-if="A('Integrity')" :items="integrity" />
       </transition>
     </div>
   </div>
@@ -66,6 +67,7 @@ import Definitions from '@/components/Definitions'
 import Unwisdom from '@/components/Unwisdom'
 import Expound from '@/components/Expound'
 import Conversation from '@/components/Conversation'
+import Integrity from '@/components/Integrity'
 import { mapGetters } from 'vuex'
 
 export default {
@@ -77,7 +79,7 @@ export default {
       application: 'Conversation'
     }
   },
-  components: { Navigation, BlockList, TextOutline, HangingTabs, Persons, Definitions, Unwisdom, Expound, Conversation },
+  components: { Navigation, BlockList, TextOutline, HangingTabs, Persons, Definitions, Unwisdom, Expound, Conversation, Integrity },
   computed: {
     ...mapGetters(['study', 'text', 'score']),
     observations () {
@@ -87,25 +89,24 @@ export default {
       return ['Titles', 'Points', 'Keywords', 'Emotions', 'Unwisdom', 'Expound']
     },
     applications () {
-      return ['Conversation', 'ACTS']
+      return ['Conversation', 'ACTS', 'Integrity']
     },
     isObservationList () {
       return ['People', 'Nouns', 'Adjectives', 'Actions'].includes(this.observation)
     },
-    unwisdoms () {
-      return this.study ? this.study.interpret.unwisdom : null
-    },
-    expounds () {
-      return this.study ? this.study.interpret.expound : null
-    },
-    convo () {
-      return this.study ? this.study.application.convo : null
-    }
+    unwisdoms () { return this.getNotes('interpret.unwisdom') },
+    expounds () { return this.getNotes('interpret.expound') },
+    convo () { return this.getNotes('application.convo') },
+    integrity () { return this.getNotes('application.integrity') }
   },
   methods: {
     O (activity) { return this.observation === activity },
     I (activity) { return this.interpretation === activity },
     A (activity) { return this.application === activity },
+    getNotes (key) {
+      const parts = key.split('.')
+      return this.study ? this.study[parts[0]][parts[1]] : null
+    },
     componentFor (items) {
       return Array.isArray(items) ? 'BlockList' : 'Definitions'
     }
