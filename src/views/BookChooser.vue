@@ -7,7 +7,7 @@
           <p class="uppercase">{{s.title || s.source}} <span v-if="s.author" class="secondary font-2">{{s.author}}</span></p>
           <p class="secondary3 font-3">{{s.source}}</p>
         </div>
-        <a @click="deleteStudySource(s)">🗑</a>
+        <a @click="deleteStudy(s)">🗑</a>
       </li>
     </ul>
     <div class="content p3 flex-row">
@@ -56,7 +56,7 @@ export default {
     hasStudies () { return !!this.studies.length }
   },
   methods: {
-    ...mapActions(['setBook', 'setStudies', 'setStudyMeta', 'setStudy', 'setStudyIndex']),
+    ...mapActions(['setBook', 'setStudies', 'setStudyMeta', 'setStudy', 'setStudyIndex', 'deleteStudy']),
     studySelected (study) {
       this.setStudyIndex(0)
       this.setStudy(null)
@@ -91,9 +91,6 @@ export default {
           this.setStudies(studies)
           return meta
         })
-    },
-    deleteStudySource (source) {
-      this.studies.splice(this.studies.indexOf(s => s.source === source), 1)
     }
   }
 }
