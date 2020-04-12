@@ -81,7 +81,7 @@ const template = {
     ]
   },
   application: {
-    convo: [
+    conversation: [
       { question: `conversation question accessible to any audience` }
     ],
     ACTS: {

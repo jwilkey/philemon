@@ -7,8 +7,8 @@
       <hanging-tabs :items="observations" v-model="observation" />
 
       <transition name="fade-in">
-        <persons v-if="O('Persons')" :items="study.observe.persons" />
-        <definitions v-if="O('Definitions')" :items="study.observe.definitions" />
+        <persons v-if="O('persons')" :items="study.observe.persons" />
+        <definitions v-if="O('definitions')" :items="study.observe.definitions" />
         <block-list v-if="isObservationList" :items="study.observe[observation.toLowerCase()]" />
       </transition>
 
@@ -23,12 +23,12 @@
       <hanging-tabs :items="interpretations" v-model="interpretation" />
 
       <transition name="fade-in">
-        <block-list v-if="I('Titles')" :items="study.interpret.titles" />
-        <block-list v-if="I('Points')" :items="study.interpret.points" />
-        <component :is="componentFor(study.interpret.keywords)" v-if="I('Keywords')" :items="study.interpret.keywords" />
-        <definitions v-if="I('Emotions')" :items="study.interpret.emotions" />
-        <unwisdom v-if="I('Unwisdom')" :items="unwisdoms" />
-        <expound v-if="I('Expound')" :items="expounds" />
+        <block-list v-if="I('titles')" :items="study.interpret.titles" />
+        <block-list v-if="I('points')" :items="study.interpret.points" />
+        <component :is="componentFor(study.interpret.keywords)" v-if="I('keywords')" :items="study.interpret.keywords" />
+        <component :is="componentFor(study.interpret.emotions)" v-if="I('emotions')" :items="study.interpret.emotions" />
+        <unwisdom v-if="I('unwisdom')" :items="unwisdoms" />
+        <expound v-if="I('expound')" :items="expounds" />
       </transition>
 
       <hr class="border-primary">
@@ -42,7 +42,7 @@
       <hanging-tabs :items="applications" v-model="application" />
 
       <transition name="fade-in">
-        <conversation v-if="A('Conversation')" :items="convo" />
+        <conversation v-if="A('conversation')" :items="conversation" />
         <div v-if="A('ACTS')" class="content p2">
           <div v-for="(questions, category) in study.application.ACTS" :key="category">
             <h3>{{category}}</h3>
@@ -51,7 +51,7 @@
             </div>
           </div>
         </div>
-        <integrity v-if="A('Integrity')" :items="integrity" />
+        <integrity v-if="A('integrity')" :items="integrity" />
       </transition>
     </div>
   </div>
@@ -74,29 +74,32 @@ export default {
   name: 'home',
   data () {
     return {
-      observation: 'Persons',
-      interpretation: 'Unwisdom',
-      application: 'Conversation'
+      observation: 'persons',
+      interpretation: 'unwisdom',
+      application: 'conversation'
     }
   },
   components: { Navigation, BlockList, TextOutline, HangingTabs, Persons, Definitions, Unwisdom, Expound, Conversation, Integrity },
   computed: {
     ...mapGetters(['study', 'text', 'score']),
     observations () {
-      return ['Persons', 'People', 'Nouns', 'Adjectives', 'Actions', 'Definitions']
+      return ['persons', 'people', 'nouns', 'adjectives', 'actions', 'definitions']
+        .filter(a => ({ ...this.score.observe[a] }).complete)
     },
     interpretations () {
-      return ['Titles', 'Points', 'Keywords', 'Emotions', 'Unwisdom', 'Expound']
+      return ['titles', 'points', 'keywords', 'emotions', 'unwisdom', 'expound']
+        .filter(a => ({ ...this.score.interpret[a] }).complete)
     },
     applications () {
-      return ['Conversation', 'ACTS', 'Integrity']
+      return ['conversation', 'ACTS', 'integrity']
+        .filter(a => ({ ...this.score.application[a] }).complete)
     },
     isObservationList () {
       return ['People', 'Nouns', 'Adjectives', 'Actions'].includes(this.observation)
     },
     unwisdoms () { return this.getNotes('interpret.unwisdom') },
     expounds () { return this.getNotes('interpret.expound') },
-    convo () { return this.getNotes('application.convo') },
+    conversation () { return this.getNotes('application.conversation') },
     integrity () { return this.getNotes('application.integrity') }
   },
   methods: {

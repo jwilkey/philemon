@@ -2,7 +2,6 @@
   <div>
     <div class="title-bar flex-row">
       <div class="title flex-one" @click="$router.push('books')">{{title}}</div>
-      <a @click="$router.push('overview')">?</a>
     </div>
     <score />
   </div>

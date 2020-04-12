@@ -97,6 +97,7 @@ hr {
   @extend .bg-hi;
   @extend .secondary2;
   @extend .z0;
+  text-transform: capitalize;
   border-top: none;
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
