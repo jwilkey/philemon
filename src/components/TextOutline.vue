@@ -32,6 +32,7 @@ export default {
       display: ''
     }
   },
+  props: ['highlight'],
   computed: {
     ...mapGetters(['study']),
     text () {
@@ -40,6 +41,9 @@ export default {
   },
   watch: {
     study () {
+      this.createDisplay()
+    },
+    highlight () {
       this.createDisplay()
     }
   },
@@ -65,6 +69,10 @@ export default {
       text = this.showPlain
         ? text.replace(/\u02D9\r?\n|\r/g, '').replace(/\u0020\u0020+/g, ' ')
         : text.replace(/\u02D9/g, '')
+      const highlight = [ ...this.highlight ]
+      highlight.forEach(h => {
+        text = text.replace(new RegExp(h, 'g'), `<span class="highlight">${h}</span>`)
+      })
       this.display = text
     }
   }
@@ -88,6 +96,9 @@ export default {
   &.hid {
     opacity: 0;
   }
+}
+.highlight {
+  background-color: #dadadd;
 }
 </style>
 

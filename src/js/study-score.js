@@ -34,9 +34,10 @@ const judge = value => {
   const goodObject = () => Object.keys(value).length > 0 && Object.values(value).every(judge)
 
   return !!value &&
-    ((Array.isArray(value) ? goodArray() : false) ||
-      (value instanceof Object ? goodObject() : false) ||
-      (typeof (value) === 'string' ? value.length > 0 : false))
+    (value === 'N/A' ||
+     (Array.isArray(value) ? goodArray() : false) ||
+     (value instanceof Object ? goodObject() : false) ||
+     (typeof (value) === 'string' ? value.length > 0 : false))
 }
 
 const template = {

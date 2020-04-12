@@ -3,7 +3,7 @@
     <navigation />
 
     <div v-if="study" class="flex-one p4-top scrolly">
-      <text-outline class="textoutline p0-bottom z2" />
+      <text-outline class="textoutline p0-bottom z2" :highlight="highlight" />
       <hanging-tabs :items="observations" v-model="observation" />
 
       <transition name="fade-in">
@@ -84,23 +84,37 @@ export default {
     ...mapGetters(['study', 'text', 'score']),
     observations () {
       return ['persons', 'people', 'nouns', 'adjectives', 'actions', 'definitions']
-        .filter(a => ({ ...this.score.observe[a] }).complete)
+        .filter(a => this.shouldShow('observe', a))
     },
     interpretations () {
       return ['titles', 'points', 'keywords', 'emotions', 'unwisdom', 'expound']
-        .filter(a => ({ ...this.score.interpret[a] }).complete)
+        .filter(a => this.shouldShow('interpret', a))
     },
     applications () {
       return ['conversation', 'ACTS', 'integrity']
-        .filter(a => ({ ...this.score.application[a] }).complete)
+        .filter(a => this.shouldShow('application', a))
     },
     isObservationList () {
-      return ['People', 'Nouns', 'Adjectives', 'Actions'].includes(this.observation)
+      return ['people', 'nouns', 'adjectives', 'actions'].includes(this.observation)
+    },
+    highlight () {
+      const highlight = this.O('definitions') ? Object.keys(this.study.observe.definitions || {})
+        : this.study.observe[this.observation]
+      return Array.isArray(highlight) ? highlight : []
     },
     unwisdoms () { return this.getNotes('interpret.unwisdom') },
     expounds () { return this.getNotes('interpret.expound') },
     conversation () { return this.getNotes('application.conversation') },
     integrity () { return this.getNotes('application.integrity') }
+  },
+  watch: {
+    study () {
+      this.$nextTick(() => {
+        this.observation = this.shouldShow('observe', this.observation) ? this.observation : 'persons'
+        this.interpretation = this.shouldShow('interpret', this.interpretation) ? this.interpretation : 'keywords'
+        this.application = this.shouldShow('application', this.application) ? this.application : 'conversation'
+      })
+    }
   },
   methods: {
     O (activity) { return this.observation === activity },
@@ -109,6 +123,9 @@ export default {
     getNotes (key) {
       const parts = key.split('.')
       return this.study ? this.study[parts[0]][parts[1]] : null
+    },
+    shouldShow (category, activity) {
+      return this.getNotes(`${category}.${activity}`) !== 'N/A' && ({ ...this.score[category][activity] }).complete
     },
     componentFor (items) {
       return Array.isArray(items) ? 'BlockList' : 'Definitions'
