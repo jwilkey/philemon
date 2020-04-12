@@ -4,15 +4,15 @@
     <div class="v-fill content border-left-tertiary p2-left flex-column">
       <div class="flex-row">
         <p class="flex-one primary p1-bottom">{{study.passage}}</p>
-        <a class="tertiary pointer font-2" @click="toggle">{{ show ? 'collapse' : 'show' }}</a>
+        <a class="tertiary pointer font-2" @click="toggle">{{ show ? '◉' : '○' }}</a>
       </div>
       <div class="text-outline-text" :class="{ collapsed: !show }">
         <p v-html="display" />
       </div>
       <transition name="fade-in">
         <p v-if="show" class="text-right font-2 m2-top tertiary m1-bottom pointer">
-          <a @click="toggleVerses" :class="{strike: !showVerses}">verses</a>&nbsp;
-          <a @click="toggleStructure" :class="{strike: showPlain}">structure</a>
+          <a class="option" @click="toggleVerses" :class="{active: showVerses}">V#</a>&nbsp;
+          <a class="option" @click="toggleStructure" :class="{active: !showPlain}">⑆</a>
         </p>
       </transition>
     </div>
@@ -117,5 +117,16 @@ export default {
 }
 .strike {
   text-decoration: line-through;
+}
+.option {
+  @extend .p1-h;
+  @extend .rounded;
+  @extend .hi;
+  @extend .bg-primary3;
+  @extend .border-primary;
+  transition: opacity .3s;
+  &:not(.active) {
+    @extend .opacity50;
+  }
 }
 </style>
