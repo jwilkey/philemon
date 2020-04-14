@@ -1,9 +1,16 @@
 <template>
   <div class="nav z2">
-    <div v-for="(s, i) in studyCount" :key="i" class="nav-item" :class="{active: i === studyIndex}" @click="studySelected(i)">
-      <div />
-      <p>Study {{ i + 1 }}</p>
-      <div />
+    <div v-if="compact">
+      <div v-for="(s, i) in studyCount" :key="i" class="nav-item" :class="{active: i === studyIndex}" @click="studySelected(i)">
+        <div />
+        <p>Study {{ i + 1 }}</p>
+        <div />
+      </div>
+    </div>
+    <div v-else class="p1 p0-top flex-one flex-row">
+      <select v-model="selected" class="flex-one">
+        <option v-for="(s, i) in studyCount" :key="i" :value="i">Study {{ i + 1 }}</option>
+      </select>
     </div>
   </div>
 </template>
@@ -13,10 +20,23 @@ import { mapGetters, mapActions } from 'vuex'
 
 export default {
   name: 'Nav',
+  data () {
+    return {
+      selected: `${this.studyIndex}`
+    }
+  },
   computed: {
     ...mapGetters(['study', 'studyMeta', 'studyIndex']),
     studyCount () {
       return this.studyMeta.studyCount
+    },
+    compact () {
+      return this.studyCount < 6
+    }
+  },
+  watch: {
+    selected () {
+      this.studySelected(parseInt(this.selected))
     }
   },
   methods: {
@@ -73,5 +93,12 @@ export default {
     @extend .hi;
   }
   transition: background-color .5s;
+}
+select {
+  @extend .border-secondary;
+  @extend .bg-hi;
+  display: inline-block;
+  width: 90%;
+  box-sizing: border-box;
 }
 </style>

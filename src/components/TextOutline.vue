@@ -7,7 +7,9 @@
         <a class="tertiary pointer font-2" @click="toggle">{{ show ? '◉' : '○' }}</a>
       </div>
       <div class="text-outline-text" :class="{ collapsed: !show }">
-        <p v-html="display" />
+        <transition name="fade-in">
+          <p v-if="display" v-html="display" />
+        </transition>
       </div>
       <transition name="fade-in">
         <p v-if="show" class="text-right font-2 m2-top tertiary m1-bottom pointer">
@@ -64,6 +66,7 @@ export default {
       this.createDisplay()
     },
     createDisplay () {
+      this.display = undefined
       let text = this.text.replace(/\|?(\d+)\|/g, (a, b) => `<sup class="verse-num">${b}</sup>`)
       text = text.replace(/(\d+)\u02da/g, (a, b) => `<span class="verse-num">${b} </span>`)
       text = this.showPlain
@@ -71,9 +74,11 @@ export default {
         : text.replace(/\u02D9/g, '')
       const highlight = [ ...this.highlight ]
       highlight.forEach(h => {
-        text = text.replace(new RegExp(h, 'g'), `<span class="highlight">${h}</span>`)
+        text = text.replace(new RegExp(`\\b${h}\\b`, 'g'), `<span class="highlight">${h}</span>`)
       })
-      this.display = text
+      this.$nextTick(() => {
+        this.display = text
+      })
     }
   }
 }
