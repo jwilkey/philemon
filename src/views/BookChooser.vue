@@ -47,7 +47,8 @@ export default {
       studySource: null,
       suggestedStudies: [
         { title: 'Philemon: Wilkey', source: 'https://jwilkey.github.io/bible-study/studies/philemon' },
-        { title: '1 John: Wilkey', source: 'https://jwilkey.github.io/bible-study/studies/1john' }
+        { title: '1 John: Wilkey', source: 'https://jwilkey.github.io/bible-study/studies/1john' },
+        { title: '1 Thessalonians: Wilkey', source: 'https://jwilkey.github.io/bible-study/studies/1thessalonians' }
       ]
     }
   },
