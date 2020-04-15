@@ -1,6 +1,6 @@
 <template>
   <div class="nav z2">
-    <div v-if="compact">
+    <div v-if="compact" class="flex-row">
       <div v-for="(s, i) in studyCount" :key="i" class="nav-item" :class="{active: i === studyIndex}" @click="studySelected(i)">
         <div />
         <p>Study {{ i + 1 }}</p>
@@ -22,7 +22,7 @@ export default {
   name: 'Nav',
   data () {
     return {
-      selected: `${this.studyIndex}`
+      selected: '1'
     }
   },
   computed: {
@@ -43,6 +43,7 @@ export default {
     ...mapActions(['setStudyIndex', 'setStudy', 'setStudyMeta', 'setText']),
     studySelected (index) {
       this.setStudyIndex(index)
+      this.selected = `${this.studyIndex}`
       this.setText(null)
       fetch(`${this.studyMeta.source}/STUDY_${index + 1}.json`)
         .then(r => r.json())
@@ -59,7 +60,6 @@ export default {
 @import "../assets/app";
 
 .nav {
-  @extend .flex-row;
   position: absolute;
   left: 0;
   right: 0;
