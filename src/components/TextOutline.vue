@@ -74,7 +74,7 @@ export default {
         : text.replace(/\u02D9/g, '')
       const highlight = [ ...this.highlight ]
       highlight.forEach(h => {
-        text = text.replace(new RegExp(`\\b(${h})\\b`, 'gi'), `<span class="highlight">$1</span>`)
+        text = text.replace(new RegExp(`\\b(${h.split(' = ')[0]})\\b`, 'gi'), `<span class="highlight">$1</span>`)
       })
       this.$nextTick(() => {
         this.display = text
