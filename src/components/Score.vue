@@ -80,6 +80,7 @@ export default {
       border-radius: 2px;
       min-width: 4px;
       height: 7px;
+      box-shadow: -1px -1px 1px rgba(255,255,255,.3);
     }
     &.score-observe {
       .score-activity {
