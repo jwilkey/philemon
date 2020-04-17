@@ -45,9 +45,9 @@
         <conversation v-if="A('conversation')" :items="conversation" />
         <div v-if="A('ACTS')" class="content p2">
           <div v-for="(questions, category) in study.application.ACTS" :key="category">
-            <h3>{{category}}</h3>
-            <div v-for="(q, i) in questions" :key="i" class="card">
-              {{q}}
+            <h3 class="uppercase "><span class="bg-hi p1-h opacity90">{{category}}</span></h3>
+            <div v-for="(q, i) in questions" :key="i" class="card m2-bottom">
+              • {{q}}
             </div>
           </div>
         </div>
